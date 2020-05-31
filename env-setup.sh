@@ -3,14 +3,27 @@
 home_dir=~/
 proj_dir=$home_dir/dotfiles
 
-echo "Setting up your environment...\n"
+printf "Setting up your environment...\n"
 
-echo "Linking .zshrc file\n"
-ln -s $proj_dir/.zshrc $home_dir/
+for entry in "$proj_dir"/.*
+do
+    if [ $entry != "$proj_dir/.git" ] && [ $entry != "$proj_dir/." ] && [ $entry != "$proj_dir/.." ]
+    then
+        target=${entry##*/}
 
-echo "\nLink done\n"
-echo "Linking .vim directory...\n"
-
-ln -s $proj_dir/.vim $home_dir/
-echo "\nLink done"
+        if [ -L "$home_dir/$target" ]
+        then
+            printf "$target is already present in your home directory\n"
+        else
+            printf "\nLinking $target\n"
+            ln -s $proj_dir/$target $home_dir/$target
+            if [ $? -eq 0 ]
+            then
+                printf "Link successful\n"
+            else
+                printf "Linking was unsuccessful\n"
+            fi
+        fi
+    fi
+done
 
