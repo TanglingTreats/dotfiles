@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-home_dir=~/
+home_dir=~
 proj_dir=$home_dir/dotfiles
 
 printf "Setting up your environment...\n"
