@@ -1,0 +1,14 @@
+syntax on
+set number
+set relativenumber
+
+" Set indent settings
+filetype plugin indent on
+" Show existing tab with 4 spaces
+set tabstop=4
+" When indenting with '>', use 4 spaces
+set shiftwidth=4
+" On pressing 'Tab', insert 4 spaces
+set expandtab
+
+map <F6> :setlocal spell! spelllang=en_gb<CR>
