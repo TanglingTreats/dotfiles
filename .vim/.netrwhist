@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/edwin/Documents/Personal/Example-Doc'
+let g:netrw_dirhist_2='/home/edwin/Downloads/st-luke-git/src/st-luke'
+let g:netrw_dirhist_1='/home/edwin/.oh-my-zsh'
