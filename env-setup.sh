@@ -68,6 +68,55 @@ do
                 else
                     printf "\nInvalid input detected\n"
                 fi
+
+            elif [ -d "$home_dir/$target" ]
+            then
+                answer="Y"
+
+                printf "$target already exists in your home directory\n"
+                printf "Do you want to delete the directory and create a symlink instead?\nWARNING: The deletion is permanent! Make sure your files have been moved to the appropriate dotfiles folder [Y/n] "
+                # Read user input
+                read reply
+
+                # If input is empty or null, replace with $answer, else reply remains the same
+                reply=${reply:=${answer,,}}
+
+                if [ ${reply,,} = "y" ] 
+                then
+                    # Deletes file in home directory
+                    rm -ri $home_dir/$target
+                    
+                    # Checks if command is ran successfully and the target file does not exist
+                    if [ $? -eq 0 ] && [ ! -f "$home_dir/$target" ]
+                    then
+                        printf "\nDelete successful\n"
+
+                        printf "\nLinking $target\n"
+
+                        # Links file/directory within dotfiles to home directory
+                        ln -s $proj_dir/$target $home_dir/$target
+
+                        # Success checks for previous command
+                        if [ $? -eq 0 ]
+                        then
+                            printf "Link successful\n"
+
+                        else
+                            printf "Linking was unsuccessful\n"
+
+                        fi
+                    else
+                        printf "Delete failed!\n"
+
+                    fi
+
+                elif [ ${reply,,} = "n" ]
+                then
+                    printf "No changes have been made to $target\n"
+
+                else
+                    printf "\nInvalid input detected\n"
+                fi
             fi
         fi
     fi
