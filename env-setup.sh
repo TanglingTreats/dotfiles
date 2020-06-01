@@ -87,7 +87,7 @@ do
                     rm -ri $home_dir/$target
                     
                     # Checks if command is ran successfully and the target file does not exist
-                    if [ $? -eq 0 ] && [ ! -f "$home_dir/$target" ]
+                    if [ $? -eq 0 ] && [ ! -d "$home_dir/$target" ]
                     then
                         printf "\nDelete successful\n"
 
