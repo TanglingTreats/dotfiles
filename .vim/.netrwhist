@@ -1,6 +1,1 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/data/data/com.termux/files/home/Documents/Programming/Socket-Chat-App'
-let g:netrw_dirhist_3='/home/edwin/Documents/Personal/Example-Doc'
-let g:netrw_dirhist_2='/home/edwin/Downloads/st-luke-git/src/st-luke'
-let g:netrw_dirhist_1='/home/edwin/.oh-my-zsh'
+let g:netrw_dirhistmax  =0
