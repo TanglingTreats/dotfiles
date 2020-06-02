@@ -1,3 +1,15 @@
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Better Git integration within vim
+Plugin 'tpope/vim-fugitive'
+
+
+call vundle#end()
+
 syntax on
 set number
 set relativenumber
