@@ -1,3 +1,3 @@
-[submodule "/home/treats/dotfiles/.vim/bundle/Vundle.vim"]
-	path = /home/treats/dotfiles/.vim/bundle/Vundle.vim
+[submodule "Vundle"]
+	path = .vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
