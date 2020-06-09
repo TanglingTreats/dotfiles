@@ -1,8 +1,7 @@
 #! /usr/bin/env bash
 
 # Sets paths
-home_dir=~
-proj_dir=$home_dir/dotfiles
+proj_dir=$HOME/dotfiles
 
 printf "Setting up your environment...\n"
 
@@ -16,11 +15,11 @@ do
         target=${entry##*/}
 
         # Checks if target file in home directory is a symlink
-        if [ -L "$home_dir/$target" ]
+        if [ -L "$HOME/$target" ]
         then
             printf "$target is already a symlink in your home directory\n"
         else
-            if [ -f "$home_dir/$target" ]
+            if [ -f "$HOME/$target" ]
             then
                 answer="Y"
 
@@ -35,17 +34,17 @@ do
                 if [ ${reply,,} = "y" ] 
                 then
                     # Deletes file in home directory
-                    rm -i $home_dir/$target
+                    rm -i $HOME/$target
                     
                     # Checks if command is ran successfully and the target file does not exist
-                    if [ $? -eq 0 ] && [ ! -f "$home_dir/$target" ]
+                    if [ $? -eq 0 ] && [ ! -f "$HOME/$target" ]
                     then
                         printf "\nDelete successful\n"
 
                         printf "\nLinking $target\n"
 
                         # Links file/directory within dotfiles to home directory
-                        ln -s $proj_dir/$target $home_dir/$target
+                        ln -s $proj_dir/$target $HOME/$target
 
                         # Success checks for previous command
                         if [ $? -eq 0 ]
@@ -69,7 +68,7 @@ do
                     printf "\nInvalid input detected\n"
                 fi
 
-            elif [ -d "$home_dir/$target" ]
+            elif [ -d "$HOME/$target" ]
             then
                 answer="Y"
 
@@ -84,17 +83,17 @@ do
                 if [ ${reply,,} = "y" ] 
                 then
                     # Deletes file in home directory
-                    rm -ri $home_dir/$target
+                    rm -ri $HOME/$target
                     
                     # Checks if command is ran successfully and the target file does not exist
-                    if [ $? -eq 0 ] && [ ! -d "$home_dir/$target" ]
+                    if [ $? -eq 0 ] && [ ! -d "$HOME/$target" ]
                     then
                         printf "\nDelete successful\n"
 
                         printf "\nLinking $target\n"
 
                         # Links file/directory within dotfiles to home directory
-                        ln -s $proj_dir/$target $home_dir/$target
+                        ln -s $proj_dir/$target $HOME/$target
 
                         # Success checks for previous command
                         if [ $? -eq 0 ]

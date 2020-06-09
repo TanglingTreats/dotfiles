@@ -7,8 +7,17 @@ call vundle#begin()
 " Better Git integration within vim
 Plugin 'tpope/vim-fugitive'
 
+" Molokai color scheme
+Plugin 'tomasr/molokai'
+
+" Pywal color scheme generation
+Plugin 'dylanaraps/wal.vim'
 
 call vundle#end()
+
+"colorscheme wal
+colorscheme molokai
+let g:molokai_original=1
 
 syntax on
 set number
