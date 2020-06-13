@@ -20,6 +20,8 @@ colorscheme molokai
 let g:molokai_original=1
 
 syntax on
+set hlsearch
+set incsearch
 set number
 set relativenumber
 
@@ -33,3 +35,4 @@ set shiftwidth=4
 set expandtab
 
 map <F6> :setlocal spell! spelllang=en_gb<CR>
+:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
