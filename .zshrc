@@ -100,8 +100,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 bindkey -v
-source /usr/share/nvm/init-nvm.sh
-source /etc/profile
+if [ "${HOST}" = "arch-treatspad" ]
+then
+    source /usr/share/nvm/init-nvm.sh
+    source /etc/profile
+fi
 
 # Set up Android PATH for development
 #export ANDROID_HOME=$HOME/Android/Sdk
