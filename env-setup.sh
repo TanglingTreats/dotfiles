@@ -9,7 +9,7 @@ printf "Setting up your environment...\n"
 for entry in "$proj_dir"/.*
 do
     # If entry within directory is not a .git, . or .. directory, execute inner statements
-    if [ $entry != "$proj_dir/.git" ] && [ $entry != "$proj_dir/." ] && [ $entry != "$proj_dir/.." ]
+    if [ $entry != "$proj_dir/.git" ] && [ $entry != "$proj_dir/.gitmodules" ] && [ $entry != "$proj_dir/." ] && [ $entry != "$proj_dir/.." ]
     then
         # Simplifies entry to the last section of the path
         target=${entry##*/}
@@ -116,6 +116,20 @@ do
                 else
                     printf "\nInvalid input detected\n"
                 fi
+            else
+                printf "\nLinking $target\n"
+                # Link files
+                ln -s $proj_dir/$target $HOME/$target
+
+		# Success checks for previous command
+		if [ $? -eq 0 ]
+		then
+		    printf "Link successful\n"
+
+		else
+		    printf "Linking was unsuccessful\n"
+
+		fi
             fi
         fi
     fi
