@@ -10,14 +10,18 @@ Plugin 'tpope/vim-fugitive'
 " Molokai color scheme
 Plugin 'tomasr/molokai'
 
+" Gruvbox color scheme
+Plugin 'morhetz/gruvbox'
+
 " Pywal color scheme generation
 Plugin 'dylanaraps/wal.vim'
 
 call vundle#end()
 
 "colorscheme wal
-colorscheme molokai
-let g:molokai_original=1
+set bg=dark
+let g:gruvbox_contrast_dark = 'medium'
+colorscheme gruvbox
 
 syntax on
 set hlsearch

@@ -104,6 +104,7 @@ if [ "${HOST}" = "arch-treatspad" ]
 then
     source /usr/share/nvm/init-nvm.sh
     source /etc/profile
+    export PATH="$PATH:/home/edwin/.local/bin"
 fi
 
 # Set up Android PATH for development
