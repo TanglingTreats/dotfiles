@@ -16,6 +16,9 @@ Plugin 'morhetz/gruvbox'
 " Pywal color scheme generation
 Plugin 'dylanaraps/wal.vim'
 
+" Buffer status
+Plugin 'bling/vim-bufferline'
+
 call vundle#end()
 
 "colorscheme wal
