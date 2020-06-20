@@ -17,7 +17,11 @@ Plugin 'morhetz/gruvbox'
 Plugin 'dylanaraps/wal.vim'
 
 " Buffer status
-Plugin 'bling/vim-bufferline'
+" Plugin 'bling/vim-bufferline'
+
+" vim-airline for status
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
@@ -26,11 +30,23 @@ set bg=dark
 let g:gruvbox_contrast_dark = 'medium'
 colorscheme gruvbox
 
+" General settings
 syntax on
 set hlsearch
 set incsearch
 set number
 set relativenumber
+
+" Netrw settings for pleasant looks
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:netrw_browse_split=4
+let g:netrw_altv=1
+let g:netrw_winsize=25
+augroup ProjectDrawer
+    autocmd!
+    autocmd VimEnter * :Vexplore
+augroup END
 
 " Set indent settings
 filetype plugin indent on
