@@ -69,5 +69,12 @@ set shiftwidth=4
 " On pressing 'Tab', insert 4 spaces
 set expandtab
 
+" Remap leader key
+:let mapleader = "\<Space>"
+
 map <F6> :setlocal spell! spelllang=en_gb<CR>
-:nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+:nnoremap <silent> <Bslash> :nohlsearch<Bar>:echo<CR>
+
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-definition)
+nnoremap <C-p> :GFiles<CR>
