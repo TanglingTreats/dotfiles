@@ -12,7 +12,6 @@ call plug#begin('~/.vim/plugged')
 " Better Git integration within vim
 Plug 'tpope/vim-fugitive'
 
-
 " Gruvbox color scheme
 Plug 'morhetz/gruvbox'
 
