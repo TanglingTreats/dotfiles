@@ -75,6 +75,13 @@ set expandtab
 map <F6> :setlocal spell! spelllang=en_gb<CR>
 :nnoremap <silent> <Bslash> :nohlsearch<Bar>:echo<CR>
 
+" Map CoC keys
 nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+
+if has('nvim')
+    inoremap <silent><expr> <c-space> coc#refresh()
+else
+    inoremap <silent><expr> <c-@> coc#refresh()
+endif
 nnoremap <C-p> :GFiles<CR>
