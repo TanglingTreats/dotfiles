@@ -105,6 +105,7 @@ then
     source /usr/share/nvm/init-nvm.sh
     source /etc/profile
     export PATH="$PATH:/home/edwin/.local/bin:/home/edwin/.emacs.d/bin"
+    export JDK_HOME="/usr/lib/jvm/java-11-openjdk/"
 fi
 
 # Set up Android PATH for development
