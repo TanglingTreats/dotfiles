@@ -43,13 +43,34 @@ set incsearch
 set number
 set relativenumber
 
-set foldmethod=syntax
+" Allow hidden buffers with existing changes
+set hidden
+
+setlocal foldmethod=syntax
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
+let g:netrw_is_open=0
+
+function! ToggleNetrw()
+    if g:netrw_is_open
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&filetype") == "netrw")
+                silent exe "bwipeout " . i 
+            endif
+            let i-=1
+        endwhile
+        let g:NetrwIsOpen=0
+    else
+        let g:NetrwIsOpen=1
+        silent Lexplore
+    endif
+endfunction
+nnoremap <C-e> :call ToggleNetrw()  <CR>
 " Netrw settings for pleasant looks
-let g:netrw_banner=0
+"let g:netrw_banner=0
 let g:netrw_liststyle=3
 let g:netrw_browse_split=4
 let g:netrw_altv=1
@@ -77,6 +98,8 @@ map <F6> :setlocal spell! spelllang=en_gb<CR>
 " Map CoC keys
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
 
 " Use Tab for trigger completion
 inoremap <silent><expr> <TAB>
