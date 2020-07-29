@@ -1,3 +1,6 @@
+" Remap leader key
+:let mapleader = "\<Space>"
+
 set nocompatible
 filetype off
 
@@ -68,7 +71,8 @@ function! ToggleNetrw()
         silent Lexplore
     endif
 endfunction
-nnoremap <C-e> :call ToggleNetrw()  <CR>
+nnoremap <leader>e :call ToggleNetrw()  <CR>
+
 " Netrw settings for pleasant looks
 "let g:netrw_banner=0
 let g:netrw_liststyle=3
@@ -89,8 +93,6 @@ set shiftwidth=4
 " On pressing 'Tab', insert 4 spaces
 set expandtab
 
-" Remap leader key
-:let mapleader = "\<Space>"
 
 map <F6> :setlocal spell! spelllang=en_gb<CR>
 :nnoremap <silent> <Bslash> :nohlsearch<Bar>:echo<CR>
