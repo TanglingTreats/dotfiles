@@ -18,12 +18,9 @@ Plug 'tpope/vim-fugitive'
 " Gruvbox color scheme
 Plug 'morhetz/gruvbox'
 
-" Pywal color scheme generation
-Plug 'dylanaraps/wal.vim'
-
 " vim-airline for status
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -93,15 +90,10 @@ set shiftwidth=4
 " On pressing 'Tab', insert 4 spaces
 set expandtab
 
+set colorcolumn=80
 
 map <F6> :setlocal spell! spelllang=en_gb<CR>
 :nnoremap <silent> <Bslash> :nohlsearch<Bar>:echo<CR>
-
-" Map CoC keys
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr <Plug>(coc-references)
-nmap <leader>gy <Plug>(coc-type-definition)
-nmap <leader>gi <Plug>(coc-implementation)
 
 " Use Tab for trigger completion
 inoremap <silent><expr> <TAB>
@@ -114,10 +106,16 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 " position. Coc only does snippet and additional edit on confirm.
 " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
 if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <expr> <CR> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
+" Map CoC keys
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <leader>gi <Plug>(coc-implementation)
+
 
 " Refresh coc tags
 if has('nvim')
@@ -128,3 +126,4 @@ endif
 
 " Show files in directory
 nnoremap <C-p> :GFiles<CR>
+
