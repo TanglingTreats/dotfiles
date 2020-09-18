@@ -1,0 +1,11 @@
+# Shorcuts
+function school() {
+  if [ $# -eq 0 ]
+  then
+    cd "$HOME/Documents/OneDrive-School/SIT"
+  else
+    year="Y$1"
+    tri="Tri$2"
+    cd "$HOME/Documents/OneDrive-School/SIT/$year-$tri"
+  fi
+}

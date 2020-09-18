@@ -114,15 +114,7 @@ fi
 #export PATH=$PATH:$ANDROID_HOME/tools
 #export PATH=$PATH:$ANDROID_HOME/tools/bin
 #export PATH=$PATH:$ANDROID_HOME/platform-tools
-
-# Shorcuts
-function school() {
-  if [ $# -eq 0 ]
-  then
-    cd "$HOME/Documents/OneDrive-School/SIT"
-  else
-    year="Y$1"
-    tri="Tri$2"
-    cd "$HOME/Documents/OneDrive-School/SIT/$year-$tri"
-  fi
-}
+if [ -f "$HOME/.zsh_alias" ]
+then
+  source $HOME/.zsh_alias
+fi
