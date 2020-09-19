@@ -1,11 +1,15 @@
 # Shorcuts
 function school() {
+  # Set school directory
+  sch_dir="$HOME/Documents/OneDrive-School/SIT"
+
+  # Check input parameter
   if [ $# -eq 0 ]
   then
-    cd "$HOME/Documents/OneDrive-School/SIT"
+    cd $sch_dir
   else
     year="Y$1"
     tri="Tri$2"
-    cd "$HOME/Documents/OneDrive-School/SIT/$year-$tri"
+    cd "$sch_dir/$year-$tri"
   fi
 }
