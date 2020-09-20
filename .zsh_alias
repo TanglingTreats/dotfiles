@@ -13,3 +13,8 @@ function school() {
     cd "$sch_dir/$year-$tri"
   fi
 }
+
+# Aliases
+alias rm="rm -i"
+
+alias back="cd -"
