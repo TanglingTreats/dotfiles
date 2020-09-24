@@ -14,7 +14,15 @@ function school() {
   fi
 }
 
+function change_brightness() {
+  brightness=$1
+
+  xrandr --output HDMI-A-0 --brightness $brightness
+}
+
 # Aliases
 alias rm="rm -i"
 
 alias back="cd -"
+
+alias prg_dir="cd $HOME/Documents/Programming"
