@@ -10,6 +10,13 @@ filetype off
 let g:is_term_open=0
 function! ToggleTerminal()
     if g:is_term_open
+        let i = bufnr("$")
+        while (i >= 1)
+            if (getbufvar(i, "&buftype") == "terminal")
+                silent exe "bwipeout " . i 
+            endif
+            let i-=1
+        endwhile
         let g:is_term_open=0
     else
         let g:is_term_open=1
