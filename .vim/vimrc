@@ -5,6 +5,23 @@
 set nocompatible
 filetype off
 
+" Custom mappings
+" ---- Toggle terminal ----
+let g:is_term_open=0
+function! ToggleTerminal()
+    if g:is_term_open
+        let g:is_term_open=0
+    else
+        let g:is_term_open=1
+        silent :terminal
+    endif
+endfunction
+
+tnoremap <leader>` <C-w>:q!<CR><bar> :call ToggleTerminal() <CR>
+nnoremap <leader>` :call ToggleTerminal() <CR>
+
+" ----------------------
+
 " Statusline settings
 :set statusline=%f         " Path to the file
 :set statusline+=\ -\      " Separator
@@ -107,6 +124,7 @@ set colorcolumn=80
 map <F6> :setlocal spell! spelllang=en_gb<CR>
 :nnoremap <silent> <Bslash> :nohlsearch<Bar>:echo<CR>
 
+" ------ COC Mappings ------
 " Use Tab for trigger completion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
