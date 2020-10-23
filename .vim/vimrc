@@ -24,8 +24,14 @@ function! ToggleTerminal()
     endif
 endfunction
 
+" Terminal toggle shortcut
 tnoremap <leader>` <C-w>:q!<CR><bar> :call ToggleTerminal() <CR>
 nnoremap <leader>` :call ToggleTerminal() <CR>
+
+" Fugitive shortcuts
+nmap <leader>gs :G<CR>
+nmap <leader>gu :diffget //2<CR>
+nmap <leader>gh :diffget //3<CR>
 
 " ----------------------
 
