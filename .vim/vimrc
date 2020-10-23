@@ -120,9 +120,9 @@ let g:netrw_winsize=25
 " Set indent settings
 filetype plugin indent on
 " Show existing tab with 4 spaces
-set tabstop=2
+set tabstop=4
 " When indenting with '>', use 4 spaces
-set shiftwidth=2
+set shiftwidth=4
 " On pressing 'Tab', insert 4 spaces
 set expandtab
 
