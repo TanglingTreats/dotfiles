@@ -26,3 +26,5 @@ alias rm="rm -i"
 alias back="cd -"
 
 alias prg_dir="cd $HOME/Documents/Programming"
+
+alias reset_screen="xrandr --auto"
