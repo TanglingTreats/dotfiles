@@ -1,7 +1,12 @@
 # Shorcuts
 function school() {
   # Set school directory
-  sch_dir="$HOME/Documents/OneDrive-School/SIT"
+  if [ "${HOST}" = "arch-treatspad" ]
+  then
+    sch_dir="$HOME/Documents/OneDrive-School/SIT"
+  else
+    sch_dir="$HOME/Documents/OneDrive - Singapore Institute Of Technology/SIT"
+  fi
 
   # Check input parameter
   if [ $# -eq 0 ]
