@@ -20,6 +20,20 @@ function change_brightness() {
   xrandr --output HDMI-A-0 --brightness $brightness
 }
 
+function todo_list() {
+
+    todo_file=$( < $todo_path )
+
+    printf $header
+    
+    printf "\nThis is a todo list helper! What would you like to do?\n"
+    printf "1: Create list - This creates a list for a new person.\n"
+    printf "2: Add to list - This adds items to an existing person.\n"
+    printf "3: Remove list - This removes a todo list for existing person.\n"
+    printf "4: Mark task - Marks task as done or otherwise.\n"
+    printf "5: Quit  - Exits the helper.\n"
+}
+
 # Aliases
 alias rm="rm -i"
 
@@ -28,3 +42,8 @@ alias back="cd -"
 alias prg_dir="cd $HOME/Documents/Programming"
 
 alias reset_screen="xrandr --auto"
+
+alias set_wall="wal -i"
+
+alias batt="upower -i $(upower -e | grep '/battery') | grep --color=never -E 'state|to\ full|to\ empty|percentage'"
+

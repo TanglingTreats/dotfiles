@@ -1,9 +1,24 @@
+" General settings
+syntax on
+set hlsearch
+set incsearch
+set number
+set relativenumber
+
 " Remap leader key
 :let mapleader = "\<Space>"
 
 " General vim settings
 set nocompatible
 filetype off
+if has("multi_byte")
+    set encoding=utf-8
+    if &termencoding == ""
+        let &termencoding = &encoding
+    endif
+    setglobal fileencoding=utf-8
+    set fileencodings=ucs-bom,utf-8,latin1
+endif
 
 " Custom mappings
 " ---- Toggle terminal ----
@@ -83,6 +98,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+" Latex filetype
+Plug 'lervag/vimtex'
+
+Plug 'chrisbra/unicode.vim'
+
 call plug#end()
 
 
@@ -90,13 +110,6 @@ call plug#end()
 set bg=dark
 let g:gruvbox_contrast_dark = 'medium'
 colorscheme gruvbox
-
-" General settings
-syntax on
-set hlsearch
-set incsearch
-set number
-set relativenumber
 
 " Allow hidden buffers with existing changes
 set hidden
