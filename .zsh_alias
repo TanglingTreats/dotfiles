@@ -65,3 +65,10 @@ alias batt="upower -i $(upower -e | grep '/battery') | grep --color=never -E 'st
 
 alias discord="discord --no-sandbox"
 
+alias nvi="nvim"
+
+alias connect_school="sshpass -p $vm_pass ssh $vm_user@$vm_host"
+
+alias screen_record_ext="recordmydesktop --device pulse --display $DISPLAY -x 1920 --width 1920 --height 1080 --fps 30 --freq 4500 --channels 2"
+
+alias logout_onedrive="onedrive --logout --confdir \"~/.config/onedrive-school\""

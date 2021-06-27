@@ -102,18 +102,6 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 if [ "${HOST}" = "arch-treatspad" ]
 then
-    todo_path="$HOME/Documents/Personal/todo.txt"
-    if [ -f "$todo_path" ]
-    then
-        todo_file=$( < $todo_path )
-        now="$(date +'%d %b %C')"
-        header="Here are your todos for $now:\n\n$todo_file\n"
-
-        printf $header
-    else
-        printf "You have no existing todos.\n"
-    fi
-     
     # Gets nvm information
     source /usr/share/nvm/init-nvm.sh
 
