@@ -63,4 +63,6 @@ alias screen_record_ext="recordmydesktop --device pulse --display $DISPLAY -x 19
 
 alias logout_onedrive="onedrive --logout --confdir \"~/.config/onedrive-school\""
 
+archpi4=116.15.169.212
 alias connect_pi="ssh edwin@archpi4 -p 1222"
+alias connect_pi_alias="ssh edwin@$archpi4 -p 1222"
