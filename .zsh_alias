@@ -32,7 +32,12 @@ function change_brightness() {
 
       brightness=$1
 
-      xrandr --output HDMI-A-0 --brightness $brightness
+      if [ ${HOST} = "pop-os" ]
+      then
+          xrandr --output HDMI-0 --brightness $brightness
+      else
+          xrandr --output HDMI-A-0 --brightness $brightness
+      fi
     fi
 }
 
