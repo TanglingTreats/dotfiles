@@ -134,5 +134,14 @@ do
         fi
     fi
 done
+printf "Installing vim-plug for neovim\n"
+
+if [ ! -f "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim" ]
+then
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+else
+    printf "vim-plug already exists\n"
+fi
 printf "Exiting script...\n"
 
