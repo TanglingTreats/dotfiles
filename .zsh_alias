@@ -40,6 +40,10 @@ function get_rpi4_file() {
     scp -P 1222 edwin@archpi4:$1 $2
 }
 
+function send_rpi4_file() {
+    scp -P 1222 $1 edwin@archpi4:$2
+}
+
 # Aliases
 alias rm="rm -i"
 
@@ -66,3 +70,7 @@ alias logout_onedrive="onedrive --logout --confdir \"~/.config/onedrive-school\"
 archpi4=116.15.169.212
 alias connect_pi="ssh edwin@archpi4 -p 1222"
 alias connect_pi_alias="ssh edwin@$archpi4 -p 1222"
+
+alias connect_personal="ssh edwin@personal_drop"
+
+alias heli_x="$HOME/Documents/Personal/HELI-X9/runHELI-X.sh"

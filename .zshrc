@@ -116,7 +116,6 @@ then
 
     # Add JDK to new variable
     export JDK_HOME="/usr/lib/jvm/java-11-openjdk/"
-
 fi
 
 # Set up Android PATH for development
