@@ -11,7 +11,7 @@ printf "Setting up your environment...\n"
 for entry in "$proj_dir"/.*
 do
     # If entry within directory is not a .git, . or .. directory, execute inner statements
-    if [ $entry != "$proj_dir/.git" ] && [ $entry != "$proj_dir/.gitmodules" ] && [ $entry != "$proj_dir/." ] && [ $entry != "$proj_dir/.." ]
+    if [ $entry != "$proj_dir/." ] && [ $entry != "$proj_dir/.." ]
     then
         # Simplifies entry to the last section of the path
         target=${entry##*/}
@@ -145,5 +145,9 @@ then
 else
     printf "vim-plug already exists\n"
 fi
+
+proj_dir=$base_dir/config
+printf "\nCopying config files from $proj_dir\n"
+
 printf "Exiting script...\n"
 
