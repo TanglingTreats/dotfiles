@@ -116,6 +116,9 @@ then
 
     # Add JDK to new variable
     export JDK_HOME="/usr/lib/jvm/java-11-openjdk/"
+elif [ "${HOST}" = "TreatsAir" ]
+then
+    export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
 fi
 
 # Set up Android PATH for development
@@ -128,3 +131,4 @@ if [ -f "$HOME/.zsh_alias" ]
 then
   source $HOME/.zsh_alias
 fi
+
