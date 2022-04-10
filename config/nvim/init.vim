@@ -89,10 +89,6 @@ Plug 'tpope/vim-fugitive'
 " Gruvbox color scheme
 Plug 'morhetz/gruvbox'
 
-" vim-airline for status
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-
 " Autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
@@ -104,6 +100,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 
 Plug 'chrisbra/unicode.vim'
+
+" Puts a line on indent spaces
+Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()
 
