@@ -136,18 +136,26 @@ do
         fi
     fi
 done
-printf "Installing vim-plug for neovim\n"
+printf "\nInstalling vim-plug for neovim\n"
 
+# Install vim plug
 if [ ! -f "${XDG_DATA_HOME:-$HOME/.local/share}/nvim/site/autoload/plug.vim" ]
 then
     sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 else
-    printf "vim-plug already exists\n"
+    printf "\nvim-plug already exists\n"
 fi
 
+# Replace target project directory with config
 proj_dir=$base_dir/config
 printf "\nCopying config files from $proj_dir\n"
+
+for entry in "$proj_dir"/*
+do
+    printf "Copying $entry\n"
+    ln -s $entry $HOME/.config
+done
 
 printf "Exiting script...\n"
 
