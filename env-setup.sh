@@ -1,7 +1,9 @@
 #! /usr/bin/env bash
 
+
 # Sets paths
-proj_dir=$HOME/dotfiles
+base_dir=$HOME/dotfiles
+proj_dir=$base_dir/home
 
 printf "Setting up your environment...\n"
 

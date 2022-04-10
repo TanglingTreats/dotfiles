@@ -60,8 +60,6 @@ alias reset_screen="xrandr --auto"
 
 alias set_wall="wal -i"
 
-alias batt="upower -i $(upower -e | grep '/battery') | grep --color=never -E 'state|to\ full|to\ empty|percentage'"
-
 alias discord="discord --no-sandbox"
 
 alias nvi="nvim"
@@ -79,3 +77,8 @@ alias connect_pi_alias="ssh edwin@$archpi4 -p 1222"
 alias connect_personal="ssh edwin@personal_drop"
 
 alias heli_x="$HOME/Documents/Personal/HELI-X9/runHELI-X.sh"
+
+if [ "${HOST}" = "arch-treatspad" ]
+then
+    alias batt="upower -i $(upower -e | grep '/battery') | grep --color=never -E 'state|to\ full|to\ empty|percentage'"
+fi
