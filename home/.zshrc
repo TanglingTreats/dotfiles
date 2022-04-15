@@ -119,6 +119,7 @@ then
 elif [ "${HOST}" = "TreatsAir" ]
 then
     export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
 # Set up Android PATH for development
@@ -131,4 +132,6 @@ if [ -f "$HOME/.zsh_alias" ]
 then
   source $HOME/.zsh_alias
 fi
+
+
 
