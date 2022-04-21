@@ -64,8 +64,6 @@ function! Refresh_firefox()
   endif
 endfunction
 
-" ----------------------
-
 " Statusline settings
 :set statusline=%f         " Path to the file
 :set statusline+=\ -\      " Separator
@@ -121,6 +119,7 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
+" File explorer with Netrw
 let g:netrw_is_open=0
 
 function! ToggleNetrw()
@@ -166,6 +165,21 @@ map <F6> :setlocal spell! spelllang=en_gb<CR>
 :nnoremap <silent> <Bslash> :nohlsearch<Bar>:echo<CR>
 
 " ------ COC Mappings ------
+let g:coc_global_extensions = [
+            \ 'coc-tsserver',
+            \ 'coc-html',
+            \ 'coc-css',
+            \ 'coc-omnisharp'
+            \]
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
+  let g:coc_global_extensions += ['coc-prettier']
+endif
+
+if isdirectory('./node_modules') && isdirectory('./node_modules/eslint')
+  let g:coc_global_extensions += ['coc-eslint']
+endif
+
 " Use Tab for trigger completion
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :

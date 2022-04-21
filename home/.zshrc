@@ -119,6 +119,7 @@ then
 elif [ "${HOST}" = "TreatsAir" ]
 then
     export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+    export PATH="$PATH:$HOME/dev/flutter/bin"
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 fi
 
