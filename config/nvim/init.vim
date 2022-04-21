@@ -102,6 +102,9 @@ Plug 'chrisbra/unicode.vim'
 " Puts a line on indent spaces
 Plug 'lukas-reineke/indent-blankline.nvim'
 
+" Auto close brackets
+Plug 'cohama/lexima.vim'
+
 call plug#end()
 
 
@@ -169,7 +172,8 @@ let g:coc_global_extensions = [
             \ 'coc-tsserver',
             \ 'coc-html',
             \ 'coc-css',
-            \ 'coc-omnisharp'
+            \ 'coc-omnisharp',
+            \ 'coc-json'
             \]
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
@@ -209,9 +213,9 @@ nmap <leader>gi <Plug>(coc-implementation)
 
 " Refresh coc tags
 if has('nvim')
-    inoremap <silent><expr> <c-space> coc#refresh()
+    inoremap <silent><expr> <C-space> coc#refresh()
 else
-    inoremap <silent><expr> <c-@> coc#refresh()
+    inoremap <silent><expr> <C-@> coc#refresh()
 endif
 
 " Show files in directory
