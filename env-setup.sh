@@ -3,6 +3,8 @@
 
 # Sets paths
 base_dir=$HOME/dotfiles
+
+# First project directory is in home. This will copy files to your home directory
 proj_dir=$base_dir/home
 
 printf "Setting up your environment...\n"
@@ -148,6 +150,8 @@ else
 fi
 
 # Replace target project directory with config
+# Second project directory is the .config directory
+# Does not help to delete existing directories yet
 proj_dir=$base_dir/config
 printf "\nCopying config files from $proj_dir\n"
 

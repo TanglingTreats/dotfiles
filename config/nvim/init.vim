@@ -105,6 +105,9 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 " Auto close brackets
 Plug 'cohama/lexima.vim'
 
+" Syntax highlighting
+Plug 'sheerun/vim-polyglot'
+
 call plug#end()
 
 
@@ -223,7 +226,7 @@ function! ShowDocIfNoDiagnostic(timer_id)
 endfunction
 
 function! s:show_hover_doc()
-  call timer_start(200, 'ShowDocIfNoDiagnostic')
+  call timer_start(250, 'ShowDocIfNoDiagnostic')
 endfunction
 
 autocmd CursorHoldI * :call <SID>show_hover_doc()
