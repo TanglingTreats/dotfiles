@@ -1,9 +1,7 @@
-# Highly Personalized Dotfiles
-The contents in this repository contain aliases and commands that may not work for you and require some changes beforehand.
+# The dotfiles
+The contents in this repository contain aliases and commands that I use to try to optimize my workflow.
 
-As I use this across different devices with different OSes, that is why there are highly specific configurations in place.
-
-However, feel free to use it as a point of reference for your own workflow.
+As I use this configuration across different devices with different OSes, that is why there are highly specific configurations in place.
 
 ## About the Setup Script
 The setup script is written to enable minimal setup on a new machine to get things going.
