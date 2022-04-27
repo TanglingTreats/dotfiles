@@ -32,3 +32,5 @@ if [ "${HOST}" = "arch-treatspad" ]
 then
     alias batt="upower -i $(upower -e | grep '/battery') | grep --color=never -E 'state|to\ full|to\ empty|percentage'"
 fi
+
+alias tmux_new="tmux new -s home"
