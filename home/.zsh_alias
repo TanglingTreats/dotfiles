@@ -1,4 +1,5 @@
-source ./.zsh_param_alias
+source $HOME/.zsh_param_alias
+source $HOME/.zsh_fzf_config
 
 alias rm="rm -i"
 
@@ -33,4 +34,4 @@ then
     alias batt="upower -i $(upower -e | grep '/battery') | grep --color=never -E 'state|to\ full|to\ empty|percentage'"
 fi
 
-alias tmux_new="tmux new -s home"
+alias tmux_new="tmux new-session -A -s home -n dev"
