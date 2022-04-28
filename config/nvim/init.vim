@@ -129,6 +129,18 @@ let g:netrw_winsize=25
 "    autocmd VimEnter * :Vexplore
 "augroup END
 
+function! MoveFile(newspec)
+     let old = expand('%')
+     " could be improved:
+     if (old == a:newspec)
+         return 0
+     endif
+     exe 'sav' fnameescape(a:newspec)
+     call delete(old)
+endfunction
+
+command! -nargs=1 -complete=file -bar MoveFile call MoveFile('<args>')
+
 " Set indent settings
 filetype plugin indent on
 " Show existing tab with 4 spaces

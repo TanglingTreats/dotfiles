@@ -4,7 +4,8 @@ let g:coc_global_extensions = [
             \ 'coc-html',
             \ 'coc-css',
             \ 'coc-omnisharp',
-            \ 'coc-json'
+            \ 'coc-json',
+            \ 'coc-pyright'
             \]
 
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
