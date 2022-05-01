@@ -8,8 +8,9 @@ set splitbelow
 filetype plugin on
 
 " Source all other vim files
-source ~/.config/nvim/plugins.vim
-source ~/.config/nvim/coc_config.vim
+source $HOME/.config/nvim/plugins.vim
+source $HOME/.config/nvim/coc_config.vim
+source $HOME/.config/nvim/language.vim
 
 " Remap leader key
 :let mapleader = "\<Space>"

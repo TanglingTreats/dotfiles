@@ -1,6 +1,8 @@
 {
     "eslint.autoFixOnSave": true,
     "tsserver.formatOnType": true,
+    "prettier.tabWidth": 2,
+    "coc.preferences.formatOnSaveFiletypes": ["javascript", "json"],
     "languageserver": {
         "csharp-ls": {
           "command": "csharp-ls",
