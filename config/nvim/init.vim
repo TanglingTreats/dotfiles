@@ -1,3 +1,9 @@
+" Source all other vim files
+source $HOME/.config/nvim/maps.vim
+source $HOME/.config/nvim/plugins.vim
+source $HOME/.config/nvim/coc_config.vim
+source $HOME/.config/nvim/language.vim
+
 " General settings
 syntax on
 set hlsearch
@@ -7,13 +13,16 @@ set relativenumber
 set splitbelow
 filetype plugin on
 
-" Source all other vim files
-source $HOME/.config/nvim/plugins.vim
-source $HOME/.config/nvim/coc_config.vim
-source $HOME/.config/nvim/language.vim
+" Set indent settings
+filetype plugin indent on
+" Show existing tab with 4 spaces
+set tabstop=4
+" When indenting with '>', use 4 spaces
+set shiftwidth=4
+" On pressing 'Tab', insert 4 spaces
+set expandtab
 
-" Remap leader key
-:let mapleader = "\<Space>"
+set colorcolumn=80
 
 " General vim settings
 set nocompatible
@@ -27,49 +36,6 @@ if has("multi_byte")
     set fileencodings=ucs-bom,utf-8,latin1
 endif
 
-" Custom mappings
-" ---- Toggle terminal ----
-let g:is_term_open=0
-function! ToggleTerminal()
-    if g:is_term_open
-        let i = bufnr("$")
-        while (i >= 1)
-            if (getbufvar(i, "&buftype") == "terminal")
-                silent exe "bdelete! " . i 
-            endif
-            let i-=1
-        endwhile
-        let g:is_term_open=0
-    else
-        let g:is_term_open=1
-        silent :split
-        silent :terminal
-    endif
-endfunction
-
-" Terminal toggle shortcut
-tnoremap <leader>` <C-\><C-n><bar> :call ToggleTerminal() <CR>
-nnoremap <leader>` :call ToggleTerminal() <CR>
-
-" Fugitive shortcuts
-nmap <leader>gs :G<CR>
-nmap <leader>gu :diffget //2<CR>
-nmap <leader>gh :diffget //3<CR>
-
-" Live Server behaviour
-autocmd BufWriteCmd *.html,*.css,*.gtpl :call Refresh_firefox()
-function! Refresh_firefox()
-  if &modified
-    write
-    silent !echo  'vimYo = content.window.pageYOffset;
-          \ vimXo = content.window.pageXOffset;
-          \ BrowserReload();
-          \ content.window.scrollTo(vimXo,vimYo);
-          \ repl.quit();'  |
-          \ nc -w 1 localhost 4242 2>&1 > /dev/null
-  endif
-endfunction
-
 " Statusline settings
 :set statusline=%f         " Path to the file
 :set statusline+=\ -\      " Separator
@@ -77,13 +43,6 @@ endfunction
 :set statusline+=%y        " Filetype of the file
 
 :set laststatus=2
-
-" Vim Plugin manager
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
 
 " Theme
 set bg=dark
@@ -98,26 +57,6 @@ setlocal foldmethod=syntax
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
-
-" File explorer with Netrw
-let g:netrw_is_open=0
-
-function! ToggleNetrw()
-    if g:netrw_is_open
-        let i = bufnr("$")
-        while (i >= 1)
-            if (getbufvar(i, "&filetype") == "netrw")
-                silent exe "bwipeout " . i 
-            endif
-            let i-=1
-        endwhile
-        let g:NetrwIsOpen=0
-    else
-        let g:NetrwIsOpen=1
-        silent Lexplore
-    endif
-endfunction
-nnoremap <leader>e :call ToggleNetrw()  <CR>
 
 " Netrw settings for pleasant looks
 "let g:netrw_banner=0
@@ -141,21 +80,4 @@ function! MoveFile(newspec)
 endfunction
 
 command! -nargs=1 -complete=file -bar MoveFile call MoveFile('<args>')
-
-" Set indent settings
-filetype plugin indent on
-" Show existing tab with 4 spaces
-set tabstop=4
-" When indenting with '>', use 4 spaces
-set shiftwidth=4
-" On pressing 'Tab', insert 4 spaces
-set expandtab
-
-set colorcolumn=80
-
-map <F6> :setlocal spell! spelllang=en_gb<CR>
-:nnoremap <silent> <Bslash> :nohlsearch<Bar>:echo<CR>
-
-" Show files in directory
-nnoremap <C-p> :GFiles<CR>
 
