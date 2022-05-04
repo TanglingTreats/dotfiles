@@ -3,9 +3,6 @@ function school() {
     if [ "${HOST}" = "arch-treatspad" ]
     then
         sch_dir="$HOME/Documents/OneDrive-School/SIT"
-    elif [ "${HOST}" = "TreatsAir" ]
-    then
-        sch_dir="$HOME/Documents/OneDrive - Singapore Institute Of Technology"
     else
         sch_dir="$HOME/Documents/OneDrive - Singapore Institute Of Technology/SIT"
     fi
@@ -18,7 +15,6 @@ function school() {
         year="Y$1"
         tri="Tri$2"
 
-        printf "$year-$tri"
         cd "$sch_dir/$year-$tri"
     fi
 }
