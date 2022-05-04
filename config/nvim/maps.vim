@@ -3,6 +3,11 @@
 " Remap leader key
 :let mapleader = "\<Space>"
 
+" Move through tabs
+nmap <leader>te :tabedit<Return>
+nmap <S-Tab> :tabprev<Return>
+nmap <Tab> :tabnext<Return>
+
 " ---- Toggle terminal ----
 let g:is_term_open=0
 function! ToggleTerminal()
