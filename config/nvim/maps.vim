@@ -3,6 +3,10 @@
 " Remap leader key
 :let mapleader = "\<Space>"
 
+" Edit init.vim
+nmap <leader>ec :tabedit $MYVIMRC<Return>
+nmap <leader>sc :source $MYVIMRC<Return>
+
 " Move through tabs
 nmap <leader>te :tabedit<Return>
 nmap <S-Tab> :tabprev<Return>
@@ -35,6 +39,9 @@ nnoremap <leader>` :call ToggleTerminal() <CR>
 nmap <leader>gs :G<CR>
 nmap <leader>gu :diffget //2<CR>
 nmap <leader>gh :diffget //3<CR>
+
+" Show files in directory
+nnoremap <leader>gf :GFiles<CR>
 
 " File explorer with Netrw
 let g:netrw_is_open=0
@@ -73,6 +80,3 @@ function! Refresh_firefox()
           \ nc -w 1 localhost 4242 2>&1 > /dev/null
   endif
 endfunction
-
-" Show files in directory
-nnoremap <C-p> :GFiles<CR>
