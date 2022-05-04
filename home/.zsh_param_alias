@@ -1,21 +1,26 @@
 function school() {
-  # Set school directory
-  if [ "${HOST}" = "arch-treatspad" ]
-  then
-    sch_dir="$HOME/Documents/OneDrive-School/SIT"
-  else
-    sch_dir="$HOME/Documents/OneDrive - Singapore Institute Of Technology/SIT"
-  fi
+    # Set school directory
+    if [ "${HOST}" = "arch-treatspad" ]
+    then
+        sch_dir="$HOME/Documents/OneDrive-School/SIT"
+    elif [ "${HOST}" = "TreatsAir" ]
+    then
+        sch_dir="$HOME/Documents/OneDrive - Singapore Institute Of Technology"
+    else
+        sch_dir="$HOME/Documents/OneDrive - Singapore Institute Of Technology/SIT"
+    fi
 
-  # Check input parameter
-  if [ $# -eq 0 ]
-  then
-    cd $sch_dir
-  else
-    year="Y$1"
-    tri="Tri$2"
-    cd "$sch_dir/$year-$tri"
-  fi
+    # Check input parameter
+    if [[ $# -eq 0 ]]
+    then
+        cd "$sch_dir"
+    else
+        year="Y$1"
+        tri="Tri$2"
+
+        printf "$year-$tri"
+        cd "$sch_dir/$year-$tri"
+    fi
 }
 
 function change_brightness() {
@@ -29,14 +34,14 @@ function change_brightness() {
         printf "NOTE: This does not change the settings within the external monitor\n"
     else
 
-      brightness=$1
+        brightness=$1
 
-      if [ ${HOST} = "pop-os" ]
-      then
-          xrandr --output HDMI-0 --brightness $brightness
-      else
-          xrandr --output HDMI-A-0 --brightness $brightness
-      fi
+        if [ ${HOST} = "pop-os" ]
+        then
+            xrandr --output HDMI-0 --brightness $brightness
+        else
+            xrandr --output HDMI-A-0 --brightness $brightness
+        fi
     fi
 }
 
