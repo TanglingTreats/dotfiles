@@ -34,3 +34,5 @@ then
 fi
 
 alias tmux_new="tmux new-session -A -s home -n dev"
+
+alias psql_start="pg_ctl -D /opt/homebrew/var/postgres start"

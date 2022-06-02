@@ -12,6 +12,36 @@ nmap <leader>te :tabedit<Return>
 nmap <S-Tab> :tabprev<Return>
 nmap <Tab> :tabnext<Return>
 
+" Move current tab into the specified direction.
+"
+" @param direction -1 for left, 1 for right.
+function! TabMove(direction)
+    " get number of tab pages.
+    let ntp=tabpagenr("$")
+    " move tab, if necessary.
+    if ntp > 1
+        " get number of current tab page.
+        let ctpn=tabpagenr()
+        " move left.
+        if ctpn == 1 && a:direction < 0
+            execute "echo 'Unable to move tab left'"
+        elseif ctpn == ntp && a:direction > 0
+            execute "echo 'Unable to move tab right'"
+        else
+            " move tab page.
+            if a:direction > 0
+                execute "tabm +1"
+            else
+                execute "tabm -1"
+            endif
+        endif
+
+    endif
+endfunction
+
+map <F9> :call TabMove(-1)<CR>
+map <F10> :call TabMove(1)<CR>
+
 " ---- Toggle terminal ----
 let g:is_term_open=0
 function! ToggleTerminal()
