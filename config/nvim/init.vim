@@ -11,6 +11,7 @@ set incsearch
 set number
 set relativenumber
 set splitbelow
+set expandtab
 filetype plugin on
 
 " Set indent settings
