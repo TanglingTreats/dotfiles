@@ -1,5 +1,4 @@
 -- Global mapping
-vim.g.map="<Space>"
 
 -- Global options
 vim.opt.encoding="utf-8"
