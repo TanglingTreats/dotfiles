@@ -37,6 +37,10 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-cmdline'
   use 'L3MON4D3/LuaSnip' -- snippet engine
 
+  use { 'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
+
   if packer_bootstrap then
     require('packer').sync()
   end
