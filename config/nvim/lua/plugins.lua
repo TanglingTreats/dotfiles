@@ -29,10 +29,11 @@ packer.startup(function(use)
   use 'neovim/nvim-lspconfig' -- LSP
   use 'onsails/lspkind.nvim' -- Pictograms for autocompletion
   use 'hrsh7th/nvim-cmp' -- Autocompletion
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for in-built LSP
+  use 'hrsh7th/cmp-buffer' -- source for buffer
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
+  use 'L3MON4D3/LuaSnip' -- snippet engine
 
   if packer_bootstrap then
     require('packer').sync()
