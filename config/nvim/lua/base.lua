@@ -1,37 +1,37 @@
 -- Global mapping
 
 -- Global options
-vim.opt.encoding="utf-8"
+local set = vim.opt
+set.encoding="utf-8"
 
-vim.opt.hlsearch=true
-vim.opt.incsearch=true
+set.hlsearch=true
+set.incsearch=true
 
-vim.opt.number=true
-vim.opt.relativenumber=true
+set.number=true
+set.relativenumber=true
 
-vim.opt.splitbelow=true
+set.splitbelow=true
 
 -- Indentation
-vim.opt.expandtab=true
-vim.opt.tabstop=4
-vim.opt.shiftwidth=4
-
+set.expandtab=true
+set.tabstop=4
+set.shiftwidth=4
 -- Character limit
-vim.opt.colorcolumn="80"
+set.colorcolumn="80"
 
 -- General
-vim.opt.bg="dark"
+set.bg="dark"
 --vim.cmd.colorscheme="gruvbox"
 vim.cmd('colorscheme gruvbox')
 
 -- Statusline settings
-vim.opt.statusline="%f - Filetype:%y"
-vim.opt.laststatus=2
+set.statusline="%f - Filetype:%y"
+set.laststatus=2
 
 -- Folding
-vim.opt.foldmethod="syntax"
-vim.opt.foldnestmax=10
-vim.opt.foldenable=true
-vim.opt.foldlevel=2
+set.foldmethod="syntax"
+set.foldnestmax=10
+set.foldenable=true
+set.foldlevel=2
 
 
