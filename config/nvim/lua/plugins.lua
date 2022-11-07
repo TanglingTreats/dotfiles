@@ -25,6 +25,7 @@ packer.startup(function(use)
     use 'morhetz/gruvbox'
     use 'nvim-lua/plenary.nvim'
     use 'nvim-telescope/telescope.nvim'
+    use 'nvim-treesitter/nvim-treesitter'
 
     if packer_bootstrap then
         require('packer').sync()
