@@ -22,10 +22,11 @@ vim.cmd[[packadd packer.nvim]]
 
 packer.startup(function(use)
 
-    use 'morhetz/gruvbox'
-    use 'nvim-lua/plenary.nvim'
-    use 'nvim-telescope/telescope.nvim'
-    use 'nvim-treesitter/nvim-treesitter'
+    use 'morhetz/gruvbox' -- Theme
+    use 'nvim-lua/plenary.nvim' -- Lua functions
+    use 'nvim-telescope/telescope.nvim' -- Fuzzy file-finder
+    use 'nvim-treesitter/nvim-treesitter' -- tree-sitter interface
+    use 'neovim/nvim-lspconfig'
 
     if packer_bootstrap then
         require('packer').sync()
