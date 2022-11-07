@@ -1,3 +1,16 @@
+local ensure_packer = function()
+    local fn = vim.fn
+    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+        vim.cmd [[packadd packer.nvim]]
+        return true
+    end
+    return false
+end
+
+local packer_bootstrap = ensure_packer()
+
 local status, packer = pcall(require, "packer")
 if (not status) then
     print("Packer is not installed")
@@ -6,7 +19,15 @@ end
 
 vim.cmd[[packadd packer.nvim]]
 
+
 packer.startup(function(use)
+
     use 'morhetz/gruvbox'
+    use 'nvim-lua/plenary.nvim'
+    use 'nvim-telescope/telescope.nvim'
+
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 
 end)
