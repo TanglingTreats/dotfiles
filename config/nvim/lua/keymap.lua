@@ -31,3 +31,8 @@ function TabMove(dir)
 end
 keymap.set("n", "<F9>", "<cmd>lua TabMove(-1)<CR>")
 keymap.set("n", "<F10>", "<cmd>lua TabMove(1)<CR>")
+
+
+keymap.set("n", "<F6>", ":setlocal spell! spelllang=en_gb<CR>", {silent = true})
+-- Remove search highlight
+keymap.set("n", "<BSlash>", ":nohlsearch<Bar>:echo<CR>", {silent = true})
