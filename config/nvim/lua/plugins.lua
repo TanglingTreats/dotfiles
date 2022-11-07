@@ -25,7 +25,9 @@ packer.startup(function(use)
   use 'morhetz/gruvbox' -- Theme
   use 'nvim-lua/plenary.nvim' -- Lua functions
   use 'nvim-telescope/telescope.nvim' -- Fuzzy file-finder
-  use 'nvim-treesitter/nvim-treesitter' -- tree-sitter interface
+  use { 'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  } -- tree-sitter interface
   use 'neovim/nvim-lspconfig' -- LSP
   use 'onsails/lspkind.nvim' -- Pictograms for autocompletion
   use 'hrsh7th/nvim-cmp' -- Autocompletion
