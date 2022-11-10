@@ -23,11 +23,15 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
 
   use 'morhetz/gruvbox' -- Theme
+
   use 'nvim-lua/plenary.nvim' -- Lua functions
   use 'nvim-telescope/telescope.nvim' -- Fuzzy file-finder
+  use 'nvim-telescope/telescope-file-browser.nvim'
+
   use { 'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate'
   } -- tree-sitter interface
+
   use 'neovim/nvim-lspconfig' -- LSP
   use 'onsails/lspkind.nvim' -- Pictograms for autocompletion
   use 'hrsh7th/nvim-cmp' -- Autocompletion
@@ -36,6 +40,9 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'L3MON4D3/LuaSnip' -- snippet engine
+
+  use 'jose-elias-alvarez/null-ls.nvim' -- Set nvim as LSP
+  use 'MunifTanjim/prettier.nvim' -- Prettier plugin for nvim
 
   use { 'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
