@@ -17,9 +17,9 @@ filetype plugin on
 " Set indent settings
 filetype plugin indent on
 " Show existing tab with 4 spaces
-set tabstop=4
+set tabstop=2
 " When indenting with '>', use 4 spaces
-set shiftwidth=4
+set shiftwidth=2
 " On pressing 'Tab', insert 4 spaces
 set expandtab
 
