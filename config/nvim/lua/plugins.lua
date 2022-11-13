@@ -23,7 +23,7 @@ vim.cmd [[packadd packer.nvim]]
 packer.startup(function(use)
 
   -- Color schemes
-  use 'morhetz/gruvbox' -- Theme
+  use { "ellisonleao/gruvbox.nvim" } -- Theme
 
   -- Utility
   use 'nvim-lua/plenary.nvim' -- Lua functions

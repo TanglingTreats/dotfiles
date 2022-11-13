@@ -22,8 +22,6 @@ set.colorcolumn = "80"
 
 -- General
 set.bg = "dark"
---vim.cmd.colorscheme="gruvbox"
-vim.cmd('colorscheme gruvbox')
 
 -- Statusline settings
 set.statusline = "%f - Filetype:%y"
