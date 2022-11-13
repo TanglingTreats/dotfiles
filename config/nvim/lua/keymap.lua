@@ -8,8 +8,6 @@ keymap.set("n", "<Leader>ec", ":tabedit $MYVIMRC<Return>")
 
 -- Tab movements
 keymap.set("n", "<Leader>te", ":tabedit<Return>")
-keymap.set("n", "<Tab>", ":tabnext<Return>", { silent = true })
-keymap.set("n", "<S-Tab>", ":tabprev<Return>", { silent = true })
 
 function TabMove(dir)
   local ntp = vim.fn.tabpagenr("$")
@@ -32,7 +30,6 @@ end
 
 keymap.set("n", "<F9>", "<cmd>lua TabMove(-1)<CR>")
 keymap.set("n", "<F10>", "<cmd>lua TabMove(1)<CR>")
-
 
 keymap.set("n", "<F6>", ":setlocal spell! spelllang=en_gb<CR>", { silent = true })
 -- Remove search highlight

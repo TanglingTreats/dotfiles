@@ -51,10 +51,7 @@ packer.startup(function(use)
   use 'windwp/nvim-autopairs'
 
   -- Looks
-  use { 'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
-
+  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = false } }
   use { 'akinsho/bufferline.nvim' }
 
   if packer_bootstrap then
