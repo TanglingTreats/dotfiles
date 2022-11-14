@@ -26,12 +26,13 @@ nvim_lsp.tsserver.setup {
 -- HTML LSP
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
-nvim_lsp.html.setup {}
+nvim_lsp.html.setup {
+  filetypes = { "html" },
+  capabilities = capabilities
+}
 
 -- C# LSP
 nvim_lsp.csharp_ls.setup {
-  filetypes = { "html" },
-  capabilities = capabilities
 }
 
 -- Lua LSP
@@ -51,4 +52,9 @@ nvim_lsp.sumneko_lua.setup {
       }
     }
   }
+}
+
+-- Python LSP
+nvim_lsp.pyright.setup {
+  cmd = { "pyright-langserver", "--stdio" }
 }
