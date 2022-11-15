@@ -59,10 +59,6 @@ nvim_lsp.pyright.setup {
   cmd = { "pyright-langserver", "--stdio" }
 }
 
-local java_config = {
-  cmd = { 'jdtls' },
-  root_dir = vim.fs.dirname(vim.fs.find({ '.gradlew', '.git', 'mvnw' }, { upward = true })[1]),
-}
 -- Java LSP
 nvim_lsp.jdtls.setup {
   cmd = { 'jdtls' }
