@@ -2,6 +2,7 @@
 
 -- Global options
 local set = vim.opt
+
 set.fileencoding = "utf-8"
 set.encoding = "utf-8"
 

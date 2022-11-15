@@ -61,5 +61,13 @@ nvim_lsp.pyright.setup {
 
 -- Java LSP
 nvim_lsp.jdtls.setup {
-  cmd = { 'jdtls' }
+  cmd = { 'jdtls' },
+  filetypes = { "java" },
+  format = {
+    settings = {
+      url = "/home/edwin/.config/nvim/after/plugin/eclipse-formatter.xml",
+      profile = "custom"
+    }
+  }
+
 }

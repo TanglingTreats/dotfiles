@@ -18,7 +18,8 @@ ts.setup {
     'c_sharp',
     'lua',
     'json',
-    'css'
+    'css',
+    'java'
   },
   autotag = {
     enable = true,
