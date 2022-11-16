@@ -13,6 +13,7 @@ ts.setup {
   },
   ensure_installed = {
     'tsx',
+    'javascript',
     'html',
     'c',
     'c_sharp',
