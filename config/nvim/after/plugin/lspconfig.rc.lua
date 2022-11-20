@@ -26,6 +26,7 @@ nvim_lsp.tsserver.setup {
 -- HTML LSP
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 nvim_lsp.html.setup {
   filetypes = { "html" },
   capabilities = capabilities
@@ -60,14 +61,11 @@ nvim_lsp.pyright.setup {
 }
 
 -- Java LSP
+--[[
+--]]
+local root_pattern = nvim_lsp.util.root_pattern
 nvim_lsp.jdtls.setup {
   cmd = { 'jdtls' },
   filetypes = { "java" },
-  format = {
-    settings = {
-      url = "/home/edwin/.config/nvim/after/plugin/eclipse-formatter.xml",
-      profile = "custom"
-    }
-  }
-
+  root_dir = root_pattern("pom.xml", ".git", "mvnw"),
 }
