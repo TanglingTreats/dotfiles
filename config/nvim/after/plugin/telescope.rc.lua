@@ -12,28 +12,25 @@ local builtin = require('telescope.builtin')
 
 local fb_actions = telescope.extensions.file_browser.actions
 
-telescope.setup = {
+telescope.setup {
   defaults = {
     mappings = {
       i = {
         ["<C-h>"] = "which_key",
         ["<esc>"] = actions.close
       },
-      n = {
-        ['h'] = function() print("triggered") end
-      }
     },
   },
   extensions = {
     file_browser = {
       mappings = {
-        ['i'] = {
-          ['<C-w>'] = function() vim.cmd('normal vbd') end,
+        ["i"] = {
+          ["<C-w>"] = function() vim.cmd('normal vbd') end,
         },
         ["n"] = {
-          ["<C-n>"] = fb_actions.create,
-          ['h'] = fb_actions.goto_parent_dir,
-          ['/'] = function()
+          ["n"] = fb_actions.create,
+          ["h"] = fb_actions.goto_parent_dir,
+          ["/"] = function()
             vim.cmd('startinsert')
           end,
         }
