@@ -7,8 +7,8 @@ local set_local = vim.opt_local
 set.fileencoding = "utf-8"
 set.encoding = "utf-8"
 
-set.hlsearch = true
-set.incsearch = true
+set.incsearch = false
+--set.hlsearch = false
 
 set.number = true
 set.relativenumber = true
@@ -17,8 +17,8 @@ set.splitbelow = true
 
 -- Indentation
 set.expandtab = true
-set_local.tabstop = 2
-set_local.shiftwidth = 2
+set.tabstop = 2
+set.shiftwidth = 2
 -- Character limit
 set.colorcolumn = "80"
 
