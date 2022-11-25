@@ -34,3 +34,5 @@ set.foldmethod = "syntax"
 set.foldnestmax = 10
 set.foldenable = true
 set.foldlevel = 2
+
+set_local.updatetime = 100

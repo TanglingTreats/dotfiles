@@ -17,8 +17,12 @@ telescope.setup {
     mappings = {
       i = {
         ["<C-h>"] = "which_key",
-        ["<esc>"] = actions.close
+        ["<C-c>"] = actions.close
       },
+      n = {
+        ["<C-c>"] = actions.close,
+        ["dd"] = actions.delete_buffer
+      }
     },
   },
   extensions = {
@@ -26,6 +30,7 @@ telescope.setup {
       mappings = {
         ["i"] = {
           ["<C-w>"] = function() vim.cmd('normal vbd') end,
+          ["<A-n>"] = fb_actions.create
         },
         ["n"] = {
           ["n"] = fb_actions.create,
@@ -48,10 +53,10 @@ telescope.load_extension('mapper')
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set('n', '<leader>e',
-  '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode= "normal", layout_config={height = 40}})<CR>'
+  '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode= "insert", layout_config={height = 40}})<CR>'
   , opts)
 
 vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ no_ignore = false, hidden = true }) end, opts)
 vim.keymap.set('n', '<leader>lg', builtin.live_grep, opts)
-vim.keymap.set('n', '<leader>fb', builtin.buffers, opts)
+vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ initial_mode = "normal" }) end, opts)
 vim.keymap.set('n', '<leader>ht', builtin.help_tags, opts)
