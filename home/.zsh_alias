@@ -30,7 +30,7 @@ alias heli_x="$HOME/Documents/Personal/HELI-X9/runHELI-X.sh"
 
 if [ "${HOST}" = "arch-treatspad" ]
 then
-    alias batt="upower -i $(upower -e | grep '/battery') | grep --color=never -E 'state|to\ full|to\ empty|percentage'"
+    alias batt="upower -i $(upower -e | grep '/battery') | grep --color=never -E 'state|to full|to empty|percentage'"
 fi
 
 alias tmux_new="tmux new-session -A -s home -n dev"
