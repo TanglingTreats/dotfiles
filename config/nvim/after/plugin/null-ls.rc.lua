@@ -4,9 +4,9 @@ if (not status) then return end
 local formatting = null_ls.builtins.formatting
 local sources = {
   formatting.google_java_format,
-  null_ls.builtins.diagnostics.eslint_d.with({
-    diagnostics_format = '[eslint] #{m}\n(#{c})'
-  })
+  --null_ls.builtins.diagnostics.eslint_d.with({
+  --diagnostics_format = '[eslint] #{m}\n(#{c})'
+  --})
 }
 
 local on_attach = function(client, bufnr)
