@@ -14,6 +14,9 @@ local fb_actions = telescope.extensions.file_browser.actions
 
 telescope.setup {
   defaults = {
+    file_ignore_patterns = {
+      "node_modules", ".git", "yarn.lock"
+    },
     mappings = {
       i = {
         ["<C-h>"] = "which_key",
@@ -24,6 +27,10 @@ telescope.setup {
         ["dd"] = actions.delete_buffer
       }
     },
+  },
+  pickers = {
+    find_files = {
+    }
   },
   extensions = {
     file_browser = {
