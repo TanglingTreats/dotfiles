@@ -27,6 +27,7 @@ telescope.setup {
   },
   extensions = {
     file_browser = {
+      initial_mode = "normal",
       mappings = {
         ["i"] = {
           ["<C-w>"] = function() vim.cmd('normal vbd') end,
@@ -54,7 +55,7 @@ telescope.load_extension('mapper')
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set('n', '<leader>e',
-  '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, initial_mode= "normal", layout_config={height = 40}})<CR>'
+  '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = false, layout_config={height = 40}})<CR>'
   , opts)
 
 vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ no_ignore = false, hidden = true }) end, opts)
