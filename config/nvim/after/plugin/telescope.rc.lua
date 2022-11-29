@@ -23,13 +23,20 @@ telescope.setup {
         ["<C-c>"] = actions.close
       },
       n = {
+        ["<C-h>"] = "which_key",
         ["<C-c>"] = actions.close,
-        ["dd"] = actions.delete_buffer
       }
     },
   },
   pickers = {
     find_files = {
+    },
+    buffers = {
+      mappings = {
+        n = {
+          ["dd"] = actions.delete_buffer
+        }
+      }
     }
   },
   extensions = {
@@ -42,6 +49,7 @@ telescope.setup {
         },
         ["n"] = {
           ["n"] = fb_actions.create,
+          ["dd"] = fb_actions.remove,
           ["h"] = fb_actions.goto_parent_dir,
           ["l"] = actions.select_default,
           ["/"] = function()

@@ -4,7 +4,7 @@ vim.g.mapleader = " "
 local keymap = vim.keymap
 
 -- Edit init file
-keymap.set("n", "<Leader>ec", ":tabedit $MYVIMRC<Return>")
+keymap.set("n", "<Leader>tc", ":tabedit $MYVIMRC<Return>")
 
 -- Tab movements
 keymap.set("n", "<Leader>te", ":tabedit<Return>")
