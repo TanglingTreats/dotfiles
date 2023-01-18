@@ -50,6 +50,9 @@ packer.startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
 
+  -- git
+  use { 'akinsho/git-conflict.nvim', tag = '*' }
+
 
   -- Formatters
   use 'jose-elias-alvarez/null-ls.nvim' -- Set nvim as LSP
