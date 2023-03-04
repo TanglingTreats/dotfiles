@@ -8,14 +8,12 @@ require('lspkind').init({
   -- default: symbol
   -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
   mode = 'symbol_text',
-
   -- default symbol map
   -- can be either 'default' (requires nerd-fonts font) or
   -- 'codicons' for codicon preset (requires vscode-codicons font)
   --
   -- default: 'default'
   preset = 'codicons',
-
   -- override preset symbols
   --
   -- default: {}
@@ -30,7 +28,7 @@ require('lspkind').init({
     Interface = "",
     Module = "",
     Property = "ﰠ",
-    Unit = "塞",
+    Unit = "塞",
     Value = "",
     Enum = "",
     Keyword = "",
@@ -41,7 +39,7 @@ require('lspkind').init({
     Folder = "",
     EnumMember = "",
     Constant = "",
-    Struct = "פּ",
+    Struct = "פּ",
     Event = "",
     Operator = "",
     TypeParameter = ""
