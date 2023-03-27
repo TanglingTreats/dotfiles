@@ -1,10 +1,6 @@
-function Test-ReparsePoint([string]$path) 
-{
-  $target = Get-Item $path -Force -ea SilentlyContinue
-  return [bool]($target.Attributes -band [IO.FileAttributes]::ReparsePoint)
-}
+Import-Module .\Test-ReparsePoint.psm1
 
-function Convert-Decision([string]$decision)
+Function Convert-Decision([string]$decision)
 {
 	if($decision -match "[y]")
 	{
@@ -30,7 +26,7 @@ Get-ChildItem $target_dir | Foreach-Object {
 	if ($_.Name -eq $target_folder)
 	{
 		$folder_exists = $true
-		$folder_is_symlink = Test-ReparsePoint(Join-Path -Path $target_dir -ChildPath $_)
+		$folder_is_symlink = Test-ReparsePoint($_)
 	}
 }
 
@@ -64,8 +60,3 @@ if ($decision -or -not($folder_exists))
 	New-Item -ItemType SymbolicLink -Path (Join-Path -Path $target_dir -ChildPath $target_folder) -Target $src_dir
 	Write-Output "Symlink created"
 }
-
-Write-Output $base_src_dir
-Write-Output $src_dir
-Write-Output $target_dir
-

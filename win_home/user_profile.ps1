@@ -24,3 +24,6 @@ Function ProgrammingDir {cd ~\Documents\Programming}
 
 Set-Alias back BackDir
 Function BackDir {cd -}
+
+Set-Alias vs_dir VSWorkspaceDir
+Function VSWorkspaceDir {cd ~\Documents\Programming\vs_workspaces}
