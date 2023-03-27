@@ -1,16 +1,6 @@
 Import-Module .\Test-ReparsePoint.psm1
+Import-Module .\Convert-Decision.psm1
 
-Function Convert-Decision([string]$decision)
-{
-	if($decision -match "[y]")
-	{
-		return $true
-	}
-	else
-	{
-		return $false
-	}
-}
 
 $target_dir = "$HOME\AppData\Local\"
 $target_folder = "nvim"
