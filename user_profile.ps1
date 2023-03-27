@@ -1,9 +1,8 @@
-# Oh My Posh
-Import-Module posh-git
-oh-my-posh init pwsh --config 'C:\Users\D1331622\posh-themes\amro.omp.json' | Invoke-Expression
+# Modules
+# Import-Module posh-git
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\amro.omp.json" | Invoke-Expression
 
-# Powershell Vi mode
-Set-PSReadlineOption -EditMode vi
+$env:POSH_GIT_ENABLED = $true
 
 function OnViModeChange {
     if ($args[0] -eq 'Command') {
@@ -14,4 +13,14 @@ function OnViModeChange {
         Write-Host -NoNewLine "`e[5 q"
     }
 }
-Set-PSReadLineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
+Set-PSReadlineOption -EditMode vi -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
+#Set-PSReadlineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
+
+# Aliases
+Set-Alias vim nvim
+
+Set-Alias prg_dir ProgrammingDir
+Function ProgrammingDir {cd ~\Documents\Programming}
+
+Set-Alias back BackDir
+Function BackDir {cd -}
