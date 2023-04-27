@@ -4,6 +4,13 @@ if (not status) then return end
 
 nvim_mapper.setup({
   no_map = false,
-  search_path = os.getenv("HOME") .. "/.config/nvim/lua",
+  search_path = function ()
+    if (os.getenv("HOME"))
+    then
+      return os.getenv("HOME") .. "/.config/nvim/lua"
+    else
+      return os.getenv('APPDATA') .. "/local/nvim/lua"
+    end
+  end,
   action_on_enter = "definition",
 })
