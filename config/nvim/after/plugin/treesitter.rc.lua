@@ -17,6 +17,7 @@ ts.setup {
     'html',
     'c',
     'c_sharp',
+    'rust',
     'lua',
     'json',
     'css',

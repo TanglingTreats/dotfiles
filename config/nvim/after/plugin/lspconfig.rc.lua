@@ -83,3 +83,14 @@ nvim_lsp.jdtls.setup {
   filetypes = { "java" },
   root_dir = root_pattern("pom.xml", ".git", "mvnw"),
 }
+
+-- Rust
+nvim_lsp.rust_analyzer.setup {
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false,
+      }
+    }
+  }
+}
