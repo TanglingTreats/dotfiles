@@ -81,7 +81,9 @@ local root_pattern = nvim_lsp.util.root_pattern
 nvim_lsp.jdtls.setup {
   cmd = { 'jdtls' },
   filetypes = { "java" },
-  root_dir = root_pattern("pom.xml", ".git", "mvnw"),
+  root_dir = function(fname)
+    return require 'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(fname) or vim.fn.getcwd()
+  end,
 }
 
 -- Rust
