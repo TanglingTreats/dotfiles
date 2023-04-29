@@ -25,7 +25,6 @@ function TabMove(dir)
       end
     end
   end
-
 end
 
 keymap.set("n", "<F9>", "<cmd>lua TabMove(-1)<CR>")
@@ -34,3 +33,8 @@ keymap.set("n", "<F10>", "<cmd>lua TabMove(1)<CR>")
 keymap.set("n", "<F6>", ":setlocal spell! spelllang=en_gb<CR>", { silent = true })
 -- Remove search highlight
 keymap.set("n", "<BSlash>", ":nohlsearch<Bar>:echo<CR>", { silent = true })
+
+-- Terminal shortcut
+-- Add require for terminal and trigger open and close
+keymap.set("t", "<Leader>`", "<C-\\><C-n><bar> <cmd>lua ToggleTerminal() <CR>", { silent = true })
+keymap.set("n", "<Leader>`", "<cmd>lua ToggleTerminal() <CR>", { silent = true })

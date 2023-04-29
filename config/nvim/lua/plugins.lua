@@ -17,16 +17,17 @@ if (not status) then
   return
 end
 
+local dev_paths = require('dev')
+
 vim.cmd [[packadd packer.nvim]]
 
 
 packer.startup(function(use)
-
   -- Color schemes
   use { "ellisonleao/gruvbox.nvim" } -- Theme
 
   -- Utility
-  use 'nvim-lua/plenary.nvim' -- Lua functions
+  use 'nvim-lua/plenary.nvim'         -- Lua functions
   use 'nvim-telescope/telescope.nvim' -- Fuzzy file-finder
   use 'nvim-telescope/telescope-file-browser.nvim'
   use {
@@ -35,20 +36,20 @@ packer.startup(function(use)
   }
 
   use { 'nvim-treesitter/nvim-treesitter',
-    run = function ()
-      local ts_update = require('nvim-treesitter.install').update({with_sync = true})
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
       ts_update()
     end,
   } -- tree-sitter interface
 
   -- LSP
   use 'neovim/nvim-lspconfig' -- LSP
-  use 'onsails/lspkind.nvim' -- Pictograms for autocompletion
-  use 'hrsh7th/nvim-cmp' -- Autocompletion
-  use 'hrsh7th/cmp-nvim-lsp' -- nvim-cmp source for in-built LSP
-  use 'hrsh7th/cmp-buffer' -- source for buffer
-  use 'hrsh7th/cmp-path' -- Form filepaths
-  use 'L3MON4D3/LuaSnip' -- snippet engine
+  use 'onsails/lspkind.nvim'  -- Pictograms for autocompletion
+  use 'hrsh7th/nvim-cmp'      -- Autocompletion
+  use 'hrsh7th/cmp-nvim-lsp'  -- nvim-cmp source for in-built LSP
+  use 'hrsh7th/cmp-buffer'    -- source for buffer
+  use 'hrsh7th/cmp-path'      -- Form filepaths
+  use 'L3MON4D3/LuaSnip'      -- snippet engine
 
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
@@ -59,7 +60,7 @@ packer.startup(function(use)
 
   -- Formatters
   use 'jose-elias-alvarez/null-ls.nvim' -- Set nvim as LSP
-  use 'MunifTanjim/prettier.nvim' -- Prettier plugin for nvim
+  use 'MunifTanjim/prettier.nvim'       -- Prettier plugin for nvim
   use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'
 
@@ -67,8 +68,15 @@ packer.startup(function(use)
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = false } }
   use { 'akinsho/bufferline.nvim' }
 
+  -- Plugin Development
+  if dev_paths ~= nil
+  then
+    for _, dev_path in ipairs(dev_paths) do
+      use { dev_path }
+    end
+  end
+
   if packer_bootstrap then
     require('packer').sync()
   end
-
 end)
