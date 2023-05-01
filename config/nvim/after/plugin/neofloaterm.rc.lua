@@ -1,4 +1,4 @@
-local status, neoFloaTerm = pcall(require, 'NeoFloaTerm')
+local status, neoFloaTerm = pcall(require, 'neofloaterm')
 if not status then return end
 
 -- Run setup here
