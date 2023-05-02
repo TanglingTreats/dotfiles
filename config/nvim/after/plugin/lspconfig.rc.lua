@@ -4,6 +4,15 @@ if not status then return end
 
 local protocol = require('vim.lsp.protocol')
 
+-- LspAttach autocommand to map after LSP attach to current buffer
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    local opts = { buffer = ev.buf }
+    vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+  end
+})
+
 local on_attach = function(client, bufnr)
   if client.server_capabilities.documentFormattingProvider then
     vim.cmd [[
