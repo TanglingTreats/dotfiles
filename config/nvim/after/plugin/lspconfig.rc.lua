@@ -10,6 +10,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(ev)
     local opts = { buffer = ev.buf }
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, opts)
+    vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, opts)
+    vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
   end
 })
 
@@ -80,6 +83,7 @@ nvim_lsp.lua_ls.setup {
 
 -- Python LSP
 nvim_lsp.pyright.setup {
+  on_attach = on_attach,
   cmd = { "pyright-langserver", "--stdio" }
 }
 

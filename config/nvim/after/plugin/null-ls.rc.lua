@@ -20,7 +20,7 @@ local on_attach = function(client, bufnr)
   end
 end
 
-null_ls.setup({
-  on_attach = on_attach,
-  sources = sources
-})
+--null_ls.setup({
+--on_attach = on_attach,
+--sources = sources
+--})
