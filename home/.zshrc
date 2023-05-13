@@ -69,7 +69,11 @@ ZSH_THEME="juanghurtado"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+#
+if [ "${HOST}" != "blackpanda" ]
+then
+  plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,10 +104,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 bindkey -v
-if [ "${HOST}" = "arch-treatspad" ]
+if [ "${HOST}" = "blackpanda" ]
 then
-    # Gets nvm information
-    source /usr/share/nvm/init-nvm.sh
+    # ZSH packages
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
     # Contain system-wide startup programs
     source /etc/profile
