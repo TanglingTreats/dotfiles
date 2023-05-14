@@ -17,7 +17,7 @@ if (not status) then
   return
 end
 
-local dev_paths = require('dev')
+local status, dev_paths = pcall(require, 'dev')
 
 vim.cmd [[packadd packer.nvim]]
 
@@ -69,7 +69,7 @@ packer.startup(function(use)
   use { 'akinsho/bufferline.nvim' }
 
   -- Plugin Development
-  if dev_paths ~= nil
+  if dev_paths ~= nil and type(dev_paths) == "table"
   then
     for _, dev_path in ipairs(dev_paths) do
       use { dev_path }
