@@ -58,6 +58,10 @@ nvim_lsp.html.setup {
   capabilities = capabilities
 }
 
+nvim_lsp.cssls.setup {
+  capabilities = capabilities,
+}
+
 -- C# LSP
 nvim_lsp.csharp_ls.setup {
 }
