@@ -13,7 +13,10 @@ alias set_wall="wal -i"
 
 alias discord="discord --no-sandbox"
 
+alias vi="nvim"
 alias vim="nvim"
+
+alias ec="emacsclient"
 
 alias connect_school="sshpass -p $vm_pass ssh $vm_user@$vm_host"
 

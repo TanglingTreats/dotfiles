@@ -128,6 +128,7 @@ then
     export NUTCH_RUNTIME_HOME="$HOME/dev/apache-nutch-1.18/runtime/local"
 
     export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+    export PATH="$PATH:$HOME/.local/bin"
     export PATH="$PATH:$HOME/dev/flutter/bin"
     export PATH="$PATH:$HOME/.dotnet/tools"
     export PATH="$PATH:$HOME/.config/emacs/bin"
