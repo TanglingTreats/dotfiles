@@ -113,14 +113,15 @@ then
     # Contain system-wide startup programs
     source /etc/profile
 
-    # Add emacs to path
-    export PATH="$PATH:/home/edwin/.local/bin:/home/edwin/.emacs.d/bin"
-
     # Add dotnet tools to path
     export PATH="$PATH:/home/edwin/.dotnet/tools"
 
     # Add JDK to new variable
     export JDK_HOME="/usr/lib/jvm/java-11-openjdk/"
+
+    #Doom Emacs
+    export PATH="$PATH:$HOME/.config/emacs/bin"
+
 elif [ "${HOST}" = "TreatsAir" ]
 then
     export SOLR_HOME="/opt/homebrew/Cellar/solr/8.11.1_1/server/solr"
