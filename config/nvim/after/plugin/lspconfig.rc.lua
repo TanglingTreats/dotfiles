@@ -62,6 +62,10 @@ nvim_lsp.cssls.setup {
   capabilities = capabilities,
 }
 
+nvim_lsp.cmake.setup {
+
+}
+
 -- C# LSP
 nvim_lsp.csharp_ls.setup {
 }
