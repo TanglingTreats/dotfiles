@@ -235,7 +235,7 @@ bindsym $mod+Shift+o exec convert -resize $(xdpyinfo | grep dimensions | cut -d\
 
 # ------------ Startup ----------------
 # Start polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec_always --no-startup-id sleep 1 && ~/.config/polybar/launch.sh
 
 # Start clipboard manager on startup
 exec --no-startup-id xfce4-clipman
