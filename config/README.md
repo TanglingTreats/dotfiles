@@ -20,3 +20,4 @@ mononoki nerd font - Includes updates for emojis and symbols
 ### Emojis
 noto-fonts-emoji - Google's open source emoji
 ttf-symbola - unicode symbols and emoji
+ttf-nerd-fonts-symbols - For emacs org mode
