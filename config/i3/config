@@ -43,8 +43,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Return exec i3-sensible-terminal -e tmux new-session -A -s home -n dev
+bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Shift+Return exec i3-sensible-terminal -e tmux new-session -A -s home -n dev
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -222,10 +222,10 @@ for_window [class="net-runelite-client-RuneLite"] move to workspace $ws3
 for_window [class="discord"] move to workspace $ws9
 
 # Start ranger file manager
-# bindsym $mod+Shift+Return exec i3-sensible-terminal -e ranger
+ bindsym $mod+Shift+f exec i3-sensible-terminal -e ranger
 
 # Start vi file manager
-bindsym $mod+Shift+Return exec i3-sensible-terminal -e vifmrun
+# bindsym $mod+Shift+f exec i3-sensible-terminal -e vifmrun
 
 # Start DOOM Emacs
 bindsym $mod+p exec emacs
