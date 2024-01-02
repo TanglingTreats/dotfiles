@@ -43,10 +43,11 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal -e tmux new-session -A -s home -n dev
 
 # kill focused window
-bindsym $mod+Shift+c kill
+bindsym $mod+Shift+q kill
 
 # Set colors from Xresources
 set_from_resource $bg i3wm.color3
@@ -65,7 +66,7 @@ bindsym $mod+d exec dmenu_run -nb '$bg' -nf '$fg' -sb '$sbg' -sf '$sfg'
 set $left j
 set $down k
 set $up l
-set $right semicolon 
+set $right semicolon
 
 # change focus
 bindsym $mod+$left focus left
@@ -91,7 +92,7 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
+# split in horizontal orientatio--n
 bindsym $mod+h split h
 
 # split in vertical orientation
@@ -155,7 +156,7 @@ bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+q reload
+bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -169,15 +170,15 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym $left resize shrink width 10 px or 10 ppt
+        bindsym $up resize grow height 10 px or 10 ppt
+        bindsym $down resize shrink height 10 px or 10 ppt
+        bindsym $right resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Up resize grow height 10 px or 10 ppt
+        bindsym Down resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
@@ -204,7 +205,7 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 
 # ------------ Application -------------
 # Start Spotify
-bindsym $mod+Shift+s exec spotify
+bindsym $mod+Shift+m exec spotify
 for_window [class="Spotify"] move to workspace $ws7
 
 # Start brave in Workspace 2
@@ -235,17 +236,17 @@ bindsym $mod+Shift+o exec convert -resize $(xdpyinfo | grep dimensions | cut -d\
 
 # ------------ Startup ----------------
 # Start polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id sleep 1 && ~/.config/polybar/launch.sh
 
 # Start clipboard manager on startup
-exec xfce4-clipman
+exec --no-startup-id xfce4-clipman
 
 # Start feh to display wallpaper
-exec feh --bg-max "$(< "${HOME}/.cache/wal/wal")" 
+exec --no-startup-id feh --bg-max "$(< "${HOME}/.cache/wal/wal")" 
 #exec xwinwrap -ni -nf -b -ov -fs -- gifview -w WID ~/Pictures/wallpaper/gif/pekora.gif -a
 
 # Use pywal to sync color scheme
-exec wal -R -n
+exec --no-startup-id wal -R -n
 
 # Start compton to enable transparency
 #exec_always picom
