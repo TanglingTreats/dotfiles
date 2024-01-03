@@ -69,7 +69,11 @@ ZSH_THEME="juanghurtado"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#
+if [ "${HOST}" != "blackpanda" ]
+then
+  plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,22 +104,24 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 bindkey -v
-if [ "${HOST}" = "arch-treatspad" ]
+if [ "${HOST}" = "blackpanda" ]
 then
-    # Gets nvm information
-    source /usr/share/nvm/init-nvm.sh
+    # ZSH packages
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
     # Contain system-wide startup programs
     source /etc/profile
-
-    # Add emacs to path
-    export PATH="$PATH:/home/edwin/.local/bin:/home/edwin/.emacs.d/bin"
 
     # Add dotnet tools to path
     export PATH="$PATH:/home/edwin/.dotnet/tools"
 
     # Add JDK to new variable
     export JDK_HOME="/usr/lib/jvm/java-11-openjdk/"
+
+    #Doom Emacs
+    export PATH="$PATH:$HOME/.config/emacs/bin"
+
 elif [ "${HOST}" = "TreatsAir" ]
 then
     export SOLR_HOME="/opt/homebrew/Cellar/solr/8.11.1_1/server/solr"
@@ -123,8 +129,10 @@ then
     export NUTCH_RUNTIME_HOME="$HOME/dev/apache-nutch-1.18/runtime/local"
 
     export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+    export PATH="$PATH:$HOME/.local/bin"
     export PATH="$PATH:$HOME/dev/flutter/bin"
     export PATH="$PATH:$HOME/.dotnet/tools"
+    export PATH="$PATH:$HOME/.config/emacs/bin"
     export PATH="$PATH:$NUTCH_RUNTIME_HOME/bin"
     export JAVA_HOME="$(/usr/libexec/java_home)"
 
@@ -166,3 +174,7 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
