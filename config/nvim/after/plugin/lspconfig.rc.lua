@@ -9,10 +9,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
     local opts = { buffer = ev.buf }
+    --[[ normal mode ]]
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
     vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation, opts)
+    vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts) --[[ Prefer this ]]
     vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, opts)
-    vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
+    vim.keymap.set("n", "<leader>gc", vim.lsp.buf.code_action, opts)
+
+    --[[ insert mode ]]
+    vim.keymap.set("n", "<C-Space>", vim.lsp.buf.completion, opts)
   end
 })
 
