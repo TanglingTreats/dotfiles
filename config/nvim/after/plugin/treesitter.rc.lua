@@ -16,12 +16,14 @@ ts.setup {
     'javascript',
     'html',
     'c',
+    'cpp',
     'c_sharp',
     'rust',
     'lua',
     'json',
     'css',
-    'java'
+    'java',
+    'python'
   },
   autotag = {
     enable = true,
