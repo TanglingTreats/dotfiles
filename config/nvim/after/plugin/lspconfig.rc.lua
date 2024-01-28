@@ -98,7 +98,14 @@ nvim_lsp.lua_ls.setup {
 -- Python LSP
 nvim_lsp.pyright.setup {
   on_attach = on_attach,
-  cmd = { "pyright-langserver", "--stdio" }
+  cmd = { "pyright-langserver", "--stdio" },
+  settings = {
+    python = {
+      analysis = {
+        diagnosticMode = "openFilesOnly"
+      }
+    }
+  }
 }
 
 -- Java LSP

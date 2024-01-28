@@ -59,8 +59,8 @@ packer.startup(function(use)
 
 
   -- Formatters
-  use 'jose-elias-alvarez/null-ls.nvim' -- Set nvim as LSP
-  use 'MunifTanjim/prettier.nvim'       -- Prettier plugin for nvim
+  use 'nvimtools/none-ls.nvim'    -- Set nvim as LSP
+  use 'MunifTanjim/prettier.nvim' -- Prettier plugin for nvim
   use 'windwp/nvim-ts-autotag'
   use 'windwp/nvim-autopairs'
 
