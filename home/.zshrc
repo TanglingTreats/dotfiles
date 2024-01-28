@@ -128,12 +128,17 @@ then
     export SOLR_HOME_DIR="/opt/homebrew/Cellar/solr/8.11.1_1"
     export NUTCH_RUNTIME_HOME="$HOME/dev/apache-nutch-1.18/runtime/local"
 
+    export GOPATH="$HOME/go"
+    export GOBIN="$GOPATH/bin"
+
     export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
     export PATH="$PATH:$HOME/.local/bin"
     export PATH="$PATH:$HOME/dev/flutter/bin"
     export PATH="$PATH:$HOME/.dotnet/tools"
     export PATH="$PATH:$HOME/.config/emacs/bin"
     export PATH="$PATH:$NUTCH_RUNTIME_HOME/bin"
+    export PATH="$PATH:$GOBIN"
+
     export JAVA_HOME="$(/usr/libexec/java_home)"
 
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
