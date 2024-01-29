@@ -211,8 +211,10 @@ for_window [class="Spotify"] move to workspace $ws7
 # Start brave in Workspace 2
 bindsym $mod+Shift+b exec brave
 for_window [class="Brave-browser"] move to workspace $ws2
+for_window [class="firefox"] move to workspace $ws2
 
 for_window [class="Brave-browser" window_role="pop-up"] floating enable
+for_window [class="firefox" window_role="pop-up"] floating enable
 
 # Move runelite client to workspace 3
 for_window [class="net-runelite-client-RuneLite"] move to workspace $ws3

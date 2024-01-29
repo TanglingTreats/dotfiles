@@ -70,7 +70,7 @@ ZSH_THEME="juanghurtado"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #
-if [ "${HOST}" != "artixpad" ]
+if [ "${HOST}" != "artixpad" ] && [ "${HOST}" != "archpi4" ]
 then
   plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 fi
@@ -104,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 bindkey -v
-if [ "${HOST}" = "artixpad" ]
+if [ "${HOST}" = "artixpad" ] || [ "${HOST}" = "archpi4" ]
 then
     # ZSH packages
     source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
