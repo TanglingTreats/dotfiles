@@ -50,3 +50,7 @@ if ($decision -or -not($file_exists))
   New-Item -ItemType SymbolicLink -Path $target_file -Target $src_dir
 	Write-Output "Symlink created"
 }
+
+# Link user profile to current host
+Write-Output "Linking user profile"
+". $env:USERPROFILE\.config\powershell\user_profile.ps1" | Out-File -FilePath $PROFILE.CurrentUserCurrentHost
