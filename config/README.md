@@ -21,3 +21,9 @@ mononoki nerd font - Includes updates for emojis and symbols
 noto-fonts-emoji - Google's open source emoji
 ttf-symbola - unicode symbols and emoji
 ttf-nerd-fonts-symbols - For emacs org mode
+
+## Git
+To ensure Unix-style line endings:
+
+    git config --global core.autocrlf false
+    git config --global core.eol lf
