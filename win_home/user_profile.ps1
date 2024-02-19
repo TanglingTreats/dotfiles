@@ -1,8 +1,5 @@
 # Modules
-# Import-Module posh-git
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\amro.omp.json" | Invoke-Expression
-
-$env:POSH_GIT_ENABLED = $true
+oh-my-posh init pwsh --config 'C:/Users/edwin/Posh/bubblesextra.omp.json' | Invoke-Expression
 
 function OnViModeChange {
     if ($args[0] -eq 'Command') {
