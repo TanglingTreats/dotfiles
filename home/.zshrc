@@ -9,7 +9,7 @@ export ZSH="$home_dir/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="juanghurtado"
+ZSH_THEME="etheme"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -126,7 +126,6 @@ elif [ "${HOST}" = "TreatsAir" ]
 then
     export SOLR_HOME="/opt/homebrew/Cellar/solr/8.11.1_1/server/solr"
     export SOLR_HOME_DIR="/opt/homebrew/Cellar/solr/8.11.1_1"
-    export NUTCH_RUNTIME_HOME="$HOME/dev/apache-nutch-1.18/runtime/local"
 
     export GOPATH="$HOME/go"
     export GOBIN="$GOPATH/bin"
