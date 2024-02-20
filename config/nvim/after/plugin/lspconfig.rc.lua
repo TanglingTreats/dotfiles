@@ -75,7 +75,8 @@ nvim_lsp.ccls.setup {
     cache = {
       directory = ".ccls-cache";
     }
-  }
+  },
+  on_attach = on_attach
 }
 
 -- Makefile
