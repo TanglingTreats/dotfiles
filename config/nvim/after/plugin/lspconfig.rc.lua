@@ -64,10 +64,21 @@ nvim_lsp.html.setup {
   capabilities = capabilities
 }
 
+-- CSS
 nvim_lsp.cssls.setup {
   capabilities = capabilities,
 }
 
+-- C/C++
+nvim_lsp.ccls.setup {
+  init_options = {
+    cache = {
+      directory = ".ccls-cache";
+    }
+  }
+}
+
+-- Makefile
 nvim_lsp.cmake.setup {
 
 }
