@@ -73,7 +73,7 @@ nvim_lsp.cssls.setup {
 nvim_lsp.ccls.setup {
   init_options = {
     cache = {
-      directory = ".ccls-cache";
+      directory = "/tmp/ccls-cache",
     }
   },
   on_attach = on_attach
