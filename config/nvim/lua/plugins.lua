@@ -27,13 +27,15 @@ packer.startup(function(use)
   use { "ellisonleao/gruvbox.nvim" } -- Theme
 
   -- Utility
-  use 'nvim-lua/plenary.nvim'         -- Lua functions
-  use 'nvim-telescope/telescope.nvim' -- Fuzzy file-finder
-  use 'nvim-telescope/telescope-file-browser.nvim'
+  use 'nvim-lua/plenary.nvim'                                                     -- Lua functions
+  use 'nvim-telescope/telescope.nvim'                                             -- Fuzzy file-finder
+  use { 'nvim-telescope/telescope-file-browser.nvim',
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" } } -- Telescope file browser extension
   use {
     "lazytanuki/nvim-mapper",
     before = "telescope.nvim"
   }
+  use 'MunifTanjim/nui.nvim'
 
   use { 'nvim-treesitter/nvim-treesitter',
     run = function()
