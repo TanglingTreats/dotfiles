@@ -134,10 +134,11 @@ nvim_lsp.jdtls.setup {
 
 -- Rust
 nvim_lsp.rust_analyzer.setup {
+  on_attach = on_attach,
   settings = {
     ['rust-analyzer'] = {
       diagnostics = {
-        enable = false,
+        enable = true,
       }
     }
   }
