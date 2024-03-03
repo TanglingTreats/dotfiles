@@ -45,13 +45,14 @@ packer.startup(function(use)
   } -- tree-sitter interface
 
   -- LSP
-  use 'neovim/nvim-lspconfig' -- LSP
-  use 'onsails/lspkind.nvim'  -- Pictograms for autocompletion
-  use 'hrsh7th/nvim-cmp'      -- Autocompletion
-  use 'hrsh7th/cmp-nvim-lsp'  -- nvim-cmp source for in-built LSP
-  use 'hrsh7th/cmp-buffer'    -- source for buffer
-  use 'hrsh7th/cmp-path'      -- Form filepaths
-  use 'L3MON4D3/LuaSnip'      -- snippet engine
+  use 'neovim/nvim-lspconfig'   -- LSP
+  use 'onsails/lspkind.nvim'    -- Pictograms for autocompletion
+  use 'hrsh7th/nvim-cmp'        -- Autocompletion
+  use 'hrsh7th/cmp-nvim-lsp'    -- nvim-cmp source for in-built LSP
+  use 'hrsh7th/cmp-buffer'      -- source for buffer
+  use 'hrsh7th/cmp-path'        -- Form filepaths
+  use 'L3MON4D3/LuaSnip'        -- snippet engine
+  use 'mfussenegger/nvim-jdtls' -- Java LSP
 
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'

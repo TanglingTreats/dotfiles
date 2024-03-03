@@ -120,17 +120,17 @@ nvim_lsp.pyright.setup {
   }
 }
 
--- Java LSP
 --[[
+-- Java LSP
 --]]
-local root_pattern = nvim_lsp.util.root_pattern
+--[[local root_pattern = nvim_lsp.util.root_pattern
 nvim_lsp.jdtls.setup {
   cmd = { 'jdtls' },
   filetypes = { "java" },
   root_dir = function(fname)
     return require 'lspconfig'.util.root_pattern('pom.xml', 'gradle.build', '.git')(fname) or vim.fn.getcwd()
   end,
-}
+}--]]
 
 -- Rust
 nvim_lsp.rust_analyzer.setup {
