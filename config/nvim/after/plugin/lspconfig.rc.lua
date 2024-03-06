@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, opts) --[[ Prefer this ]]
     vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, opts)
     vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
-    vim.keymap.set("n", "<leader>gc", vim.lsp.buf.code_action, opts)
+    vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 
     --[[ insert mode ]]
     vim.keymap.set("n", "<C-Space>", vim.lsp.buf.completion, opts)
@@ -142,4 +142,9 @@ nvim_lsp.rust_analyzer.setup {
       }
     }
   }
+}
+
+-- YAML
+nvim_lsp.yamlls.setup {
+  on_attach = on_attach
 }
