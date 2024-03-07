@@ -120,6 +120,12 @@ nvim_lsp.pyright.setup {
   }
 }
 
+nvim_lsp.jedi_language_server.setup {
+  on_attach = on_attach,
+  cmd = { "jedi-language-server" },
+  filetypes = { "python" }
+}
+
 --[[
 -- Java LSP
 --]]
