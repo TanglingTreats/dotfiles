@@ -42,10 +42,12 @@ alias psql_start="pg_ctl -D /opt/homebrew/bin/postgres start"
 
 alias live_server="live-server --browser=firefox"
 
-alias mvn17="JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.9/libexec/openjdk.jdk/Contents/Home && mvn clean package"
+alias mvn17="JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.10/libexec/openjdk.jdk/Contents/Home && mvn clean package"
 
 alias editTex="vi *.tex"
 
 alias texToPdf="lualatex *.tex"
 
 alias mapleroyals="cd ~/.wine32MR/drive_c/MapleRoyals/ && env DRI_PRIME=1 WINEPREFIX=/home/edwin/.wine32MR wine MapleRoyals.exe"
+
+alias cd=z
