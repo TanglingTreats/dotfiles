@@ -5,11 +5,11 @@ alias rm="rm -i"
 
 alias back="cd -"
 
-alias prg_dir="cd $HOME/Documents/Programming"
+alias prg-dir="cd $HOME/Documents/Programming"
 
-alias reset_screen="xrandr --auto"
+alias reset-screen="xrandr --auto"
 
-alias set_wall="wal -i"
+alias set-wall="wal -i"
 
 alias discord="discord --no-sandbox"
 
@@ -18,37 +18,37 @@ alias vim="nvim"
 
 alias ec="emacsclient"
 
-alias connect_school="sshpass -p $vm_pass ssh $vm_user@$vm_host"
+alias connect-school="sshpass -p $vm_pass ssh $vm_user@$vm_host"
 
-alias screen_record_ext="recordmydesktop --device pulse --display $DISPLAY -x 1920 --width 1920 --height 1080 --fps 30 --freq 4500 --channels 2"
+alias screen-record-ext="recordmydesktop --device pulse --display $DISPLAY -x 1920 --width 1920 --height 1080 --fps 30 --freq 4500 --channels 2"
 
-alias logout_onedrive="onedrive --logout --confdir \"~/.config/onedrive-school\""
+alias logout-onedrive="onedrive --logout --confdir \"~/.config/onedrive-school\""
 
-alias connect_pi="ssh edwin@archpi4 -p 1222"
-alias connect_pi_alias="ssh edwin@archpi4 -p 1222"
+alias connect-pi="ssh edwin@archpi4 -p 1222"
+alias connect-pi-alias="ssh edwin@archpi4 -p 1222"
 
-alias connect_personal="ssh edwin@personal_drop"
+alias connect-personal="ssh edwin@personal_drop"
 
-alias heli_x="$HOME/Documents/Personal/HELI-X9/runHELI-X.sh"
+alias heli-x="$HOME/Documents/Personal/HELI-X9/runHELI-X.sh"
 
 if [ "${HOST}" = "arch-treatspad" ]
 then
     alias batt="upower -i $(upower -e | grep '/battery') | grep --color=never -E 'state|to full|to empty|percentage'"
 fi
 
-alias tmux_new="tmux new-session -A -s home -n dev"
+alias tmux-new="tmux new-session -A -s home -n dev"
 
-alias psql_start="pg_ctl -D /opt/homebrew/bin/postgres start"
+alias psql-start="pg_ctl -D /opt/homebrew/bin/postgres start"
 
-alias live_server="live-server --browser=firefox"
+alias live-server="live-server --browser=firefox"
 
-alias mvn17="JAVA_HOME=/opt/homebrew/Cellar/openjdk@17/17.0.10/libexec/openjdk.jdk/Contents/Home && mvn clean package"
+alias mvn17="JAVA-HOME=/opt/homebrew/Cellar/openjdk@17/17.0.10/libexec/openjdk.jdk/Contents/Home && mvn clean package"
 
 alias editTex="vi *.tex"
 
 alias texToPdf="lualatex *.tex"
 
-alias mapleroyals="cd ~/.wine32MR/drive_c/MapleRoyals/ && env DRI_PRIME=1 WINEPREFIX=/home/edwin/.wine32MR wine MapleRoyals.exe"
+alias mapleroyals="cd ~/.wine32MR/drive-c/MapleRoyals/ && env DRI_PRIME=1 WINEPREFIX=/home/edwin/.wine32MR wine MapleRoyals.exe"
 
 alias cd=z
 
