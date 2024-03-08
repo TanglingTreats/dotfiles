@@ -51,3 +51,5 @@ alias texToPdf="lualatex *.tex"
 alias mapleroyals="cd ~/.wine32MR/drive_c/MapleRoyals/ && env DRI_PRIME=1 WINEPREFIX=/home/edwin/.wine32MR wine MapleRoyals.exe"
 
 alias cd=z
+
+alias spring-run="mvn spring-boot:run"
