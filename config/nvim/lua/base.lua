@@ -30,9 +30,10 @@ set.statusline = "%f - Filetype:%y"
 set.laststatus = 2
 
 -- Folding
-set.foldmethod = "syntax"
-set.foldnestmax = 10
+set.foldcolumn = '1'
+set.foldlevel = 99
+set.foldlevelstart = 99
 set.foldenable = true
-set.foldlevel = 2
+--set.foldmethod = "syntax"
 
 set_local.updatetime = 100

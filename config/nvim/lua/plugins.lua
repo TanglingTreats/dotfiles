@@ -54,8 +54,10 @@ packer.startup(function(use)
   use 'L3MON4D3/LuaSnip'        -- snippet engine
   use 'mfussenegger/nvim-jdtls' -- Java LSP
 
-  use 'williamboman/mason.nvim'
+  use 'williamboman/mason.nvim' -- LSP plugin manager
   use 'williamboman/mason-lspconfig.nvim'
+
+  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- Ultra Folding experience
 
   -- git
   use { 'akinsho/git-conflict.nvim', tag = '*' }
@@ -65,7 +67,7 @@ packer.startup(function(use)
   use 'nvimtools/none-ls.nvim'    -- Set nvim as LSP
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for nvim
   use 'windwp/nvim-ts-autotag'
-  use 'windwp/nvim-autopairs'
+  use 'windwp/nvim-autopairs' -- Bracket plugin
 
   -- Looks
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = false } }
