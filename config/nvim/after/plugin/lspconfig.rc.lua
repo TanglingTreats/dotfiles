@@ -177,6 +177,11 @@ nvim_lsp.rust_analyzer.setup {
   }
 }
 
+-- Go
+nvim_lsp.gopls.setup{
+  on_attach = on_attach
+}
+
 -- YAML
 nvim_lsp.yamlls.setup {
   on_attach = on_attach
