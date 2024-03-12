@@ -40,7 +40,11 @@ keymap.set("t", "<Leader>`", "<C-\\><C-n><bar> <cmd>lua ToggleTerminal() <CR>", 
 keymap.set("n", "<Leader>`", "<cmd>lua ToggleTerminal() <CR>", { silent = true })
 
 -- Folding shortcuts
-keymap.set('n', 'zR', require('ufo').openAllFolds)
-keymap.set('n', 'zr', require('ufo').openFoldsExceptKinds)
-keymap.set('n', 'zM', require('ufo').closeAllFolds)
+local status, ufo = pcall(require, "ufo");
+if status
+then
+  keymap.set('n', 'zR', ufo.openAllFolds)
+  keymap.set('n', 'zr', ufo.openFoldsExceptKinds)
+  keymap.set('n', 'zM', ufo.closeAllFolds)
+end
 keymap.set('n', 'zm', function() require('ufo').closeFoldsWith(1) end) -- closeAllFolds == closeFoldsWith(0)
