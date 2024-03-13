@@ -115,12 +115,19 @@ then
 
     # Add dotnet tools to path
     export PATH="$PATH:/home/edwin/.dotnet/tools"
+    
+    # Go installation path
+    export GOPATH="$HOME/go"
+    export GOBIN="$GOPATH/bin"
+    export PATH="$PATH:$GOBIN"
+
+    #Doom Emacs
+    export PATH="$PATH:$HOME/.config/emacs/bin"
 
     # Add JDK to new variable
     export JDK_HOME="/usr/lib/jvm/java-11-openjdk/"
 
-    #Doom Emacs
-    export PATH="$PATH:$HOME/.config/emacs/bin"
+    eval "$(zoxide init zsh)"
 
 elif [ "${HOST}" = "TreatsAir" ]
 then
