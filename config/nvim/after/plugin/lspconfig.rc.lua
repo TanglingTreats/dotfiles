@@ -16,7 +16,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, opts)
     vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "<leader>hh", vim.lsp.buf.signature_help, opts)
 
     --[[ insert mode ]]
     vim.keymap.set("n", "<C-Space>", vim.lsp.buf.completion, opts)
