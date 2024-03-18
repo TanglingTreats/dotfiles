@@ -59,8 +59,25 @@ packer.startup(function(use)
 
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- Ultra Folding experience
 
+  use({
+    "folke/trouble.nvim",
+    dependencies = {"nvim-tree/nvim-web-devicons"},
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  })
+
   -- git
-  use { 'akinsho/git-conflict.nvim', tag = '*' }
+  use("tpope/vim-fugitive")
+  use { 'akinsho/git-conflict.nvim', tag = '*',
+    config = function ()
+      require('git-conflict').setup()
+    end
+  }
 
 
   -- Formatters
