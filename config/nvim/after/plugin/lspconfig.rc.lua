@@ -189,3 +189,6 @@ nvim_lsp.gopls.setup{
 nvim_lsp.yamlls.setup {
   on_attach = on_attach
 }
+
+-- JSON
+nvim_lsp.jsonls.setup{}
