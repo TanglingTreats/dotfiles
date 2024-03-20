@@ -70,10 +70,18 @@ telescope.load_extension('mapper')
 local opts = { noremap = true, silent = true }
 
 vim.keymap.set('n', '<leader>e',
-  '<cmd>lua require("telescope").extensions.file_browser.file_browser({path = "%:p:h", cwd = telescope_buffer_dir(), respect_git_ignore = false, hidden = true, grouped = true, previewer = true, layout_config={height=40}})<CR>'
-  , opts)
+  function() telescope.extensions.file_browser.file_browser({
+    path = "%:p:h",
+    cwd = telescope_buffer_dir(),
+    respect_git_ignore = false,
+    hidden = true,
+    grouped = true,
+    previewer = true,
+    layout_config={height=40}
+  }) end, opts)
 
 vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ no_ignore = false, hidden = true }) end, opts)
 vim.keymap.set('n', '<leader>lg', builtin.live_grep, opts)
 vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ initial_mode = "normal" }) end, opts)
 vim.keymap.set('n', '<leader>ht', builtin.help_tags, opts)
+vim.keymap.set('n', '<leader>qf', function() builtin.quickfix() end, opts)
