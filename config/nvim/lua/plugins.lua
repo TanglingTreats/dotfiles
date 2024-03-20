@@ -28,6 +28,11 @@ packer.startup(function(use)
 
   -- Utility
   use 'nvim-lua/plenary.nvim'                                                     -- Lua functions
+  use {
+      "ThePrimeagen/harpoon",
+      branch = "harpoon2",
+      requires = { {"nvim-lua/plenary.nvim"} }
+  }
   use 'nvim-telescope/telescope.nvim'                                             -- Fuzzy file-finder
   use { 'nvim-telescope/telescope-file-browser.nvim',
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" } } -- Telescope file browser extension
