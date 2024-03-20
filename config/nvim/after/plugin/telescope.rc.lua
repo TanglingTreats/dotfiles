@@ -84,4 +84,4 @@ vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ no_ignore = fa
 vim.keymap.set('n', '<leader>lg', builtin.live_grep, opts)
 vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ initial_mode = "normal" }) end, opts)
 vim.keymap.set('n', '<leader>ht', builtin.help_tags, opts)
-vim.keymap.set('n', '<leader>qf', function() builtin.quickfix() end, opts)
+vim.keymap.set('n', '<leader>qf', builtin.quickfix, opts)
