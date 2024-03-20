@@ -99,7 +99,6 @@ packer.startup(function(use)
 
   -- Looks
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = false } }
-  use { 'akinsho/bufferline.nvim' }
 
   -- Plugin Development
   if dev_paths ~= nil and type(dev_paths) == "table"
