@@ -23,11 +23,22 @@ lualine.setup {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch' },
-    lualine_c = { {
-      'filename',
-      file_status = true,
-      path = 0
-    } },
+    lualine_c = {
+      {
+        'buffers',
+        use_mode_colors=true,
+        buffers_color = {
+          -- Same values as the general color option can be used here.
+          active = 'lualine_a_normal',     -- Color for active buffer.
+          inactive = 'lualine_a_inactive', -- Color for inactive buffer.
+        },
+        symbols = {
+          modified = ' ●',      -- Text to show when the buffer is modified
+          alternate_file = ' ', -- Text to show to identify the alternate file
+          directory =  '',     -- Text to show when the buffer is a directory
+        },
+      }
+    },
     lualine_x = {
       { 'diganostics', sources = { 'nvim_diagnostic' }, symbols = {} },
       'encoding',
