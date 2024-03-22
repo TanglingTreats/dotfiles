@@ -119,7 +119,7 @@ nvim_lsp.lua_ls.setup {
       }
     })
   end,
-  filetypes = { "lua " },
+  filetypes = { "lua"  },
   on_attach = on_attach,
   settings = {
     Lua = {

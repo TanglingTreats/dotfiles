@@ -33,7 +33,8 @@ packer.startup(function(use)
       branch = "harpoon2",
       requires = { {"nvim-lua/plenary.nvim"} }
   }
-  use 'nvim-telescope/telescope.nvim'                                             -- Fuzzy file-finder
+  -- use 'nvim-telescope/telescope.nvim'                                             -- Fuzzy file-finder
+  use '/Users/edwin/Documents/Programming/vim-plugins/telescope.nvim'
   use { 'nvim-telescope/telescope-file-browser.nvim',
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" } } -- Telescope file browser extension
   use {
