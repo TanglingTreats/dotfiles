@@ -1,3 +1,6 @@
+require("mason").setup();
+require("mason-lspconfig").setup();
+
 local status, nvim_lsp = pcall(require, 'lspconfig')
 
 if not status then return end
@@ -16,7 +19,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>gD", vim.lsp.buf.declaration, opts)
     vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, opts)
     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "<leader>hh", vim.lsp.buf.signature_help, opts)
 
     --[[ insert mode ]]
     vim.keymap.set("n", "<C-Space>", vim.lsp.buf.completion, opts)
@@ -117,7 +119,7 @@ nvim_lsp.lua_ls.setup {
       }
     })
   end,
-  filetypes = { "lua " },
+  filetypes = { "lua"  },
   on_attach = on_attach,
   settings = {
     Lua = {
@@ -187,3 +189,6 @@ nvim_lsp.gopls.setup{
 nvim_lsp.yamlls.setup {
   on_attach = on_attach
 }
+
+-- JSON
+nvim_lsp.jsonls.setup{}

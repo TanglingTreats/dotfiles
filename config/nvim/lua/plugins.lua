@@ -28,7 +28,13 @@ packer.startup(function(use)
 
   -- Utility
   use 'nvim-lua/plenary.nvim'                                                     -- Lua functions
-  use 'nvim-telescope/telescope.nvim'                                             -- Fuzzy file-finder
+  use {
+      "ThePrimeagen/harpoon",
+      branch = "harpoon2",
+      requires = { {"nvim-lua/plenary.nvim"} }
+  }
+  -- use 'nvim-telescope/telescope.nvim'                                             -- Fuzzy file-finder
+  use '/Users/edwin/Documents/Programming/vim-plugins/telescope.nvim'
   use { 'nvim-telescope/telescope-file-browser.nvim',
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" } } -- Telescope file browser extension
   use {
@@ -60,8 +66,25 @@ packer.startup(function(use)
 
   use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- Ultra Folding experience
 
+  use({
+    "folke/trouble.nvim",
+    dependencies = {"nvim-tree/nvim-web-devicons"},
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  })
+
   -- git
-  use { 'akinsho/git-conflict.nvim', tag = '*' }
+  use("tpope/vim-fugitive")
+  use { 'akinsho/git-conflict.nvim', tag = '*',
+    config = function ()
+      require('git-conflict').setup()
+    end
+  }
 
 
   -- Formatters
@@ -78,7 +101,6 @@ packer.startup(function(use)
 
   -- Looks
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = false } }
-  use { 'akinsho/bufferline.nvim' }
 
   -- Plugin Development
   if dev_paths ~= nil and type(dev_paths) == "table"
