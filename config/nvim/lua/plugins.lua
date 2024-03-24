@@ -57,6 +57,7 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'    -- nvim-cmp source for in-built LSP
   use 'hrsh7th/cmp-buffer'      -- source for buffer
   use 'hrsh7th/cmp-path'        -- Form filepaths
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'        -- Form filepaths
   use 'L3MON4D3/LuaSnip'        -- snippet engine
   use 'mfussenegger/nvim-jdtls' -- Java LSP
 
