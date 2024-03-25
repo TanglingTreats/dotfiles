@@ -69,6 +69,7 @@ nvim_lsp.html.setup {
 
 -- CSS
 nvim_lsp.cssls.setup {
+  on_attach = on_attach,
   capabilities = capabilities,
 }
 
@@ -95,7 +96,7 @@ nvim_lsp.csharp_ls.setup {
 nvim_lsp.lua_ls.setup {
   on_init = function(client)
     local path = client.workspace_folders[1].name
-    if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+    if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
       return
     end
 
@@ -119,7 +120,7 @@ nvim_lsp.lua_ls.setup {
       }
     })
   end,
-  filetypes = { "lua"  },
+  filetypes = { "lua" },
   on_attach = on_attach,
   settings = {
     Lua = {
@@ -181,7 +182,7 @@ nvim_lsp.rust_analyzer.setup {
 }
 
 -- Go
-nvim_lsp.gopls.setup{
+nvim_lsp.gopls.setup {
   on_attach = on_attach
 }
 
@@ -191,4 +192,4 @@ nvim_lsp.yamlls.setup {
 }
 
 -- JSON
-nvim_lsp.jsonls.setup{}
+nvim_lsp.jsonls.setup {}

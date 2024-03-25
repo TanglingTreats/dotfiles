@@ -139,7 +139,6 @@ then
 
     export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
     export PATH="$PATH:$HOME/.local/bin"
-    export PATH="$PATH:$HOME/dev/flutter/bin"
     export PATH="$PATH:$HOME/.dotnet/tools"
     export PATH="$PATH:$HOME/.config/emacs/bin"
     export PATH="$PATH:$NUTCH_RUNTIME_HOME/bin"
