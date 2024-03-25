@@ -27,11 +27,11 @@ packer.startup(function(use)
   use { "ellisonleao/gruvbox.nvim" } -- Theme
 
   -- Utility
-  use 'nvim-lua/plenary.nvim'                                                     -- Lua functions
+  use 'nvim-lua/plenary.nvim' -- Lua functions
   use {
-      "ThePrimeagen/harpoon",
-      branch = "harpoon2",
-      requires = { {"nvim-lua/plenary.nvim"} }
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { { "nvim-lua/plenary.nvim" } }
   }
   -- use 'nvim-telescope/telescope.nvim'                                             -- Fuzzy file-finder
   use '/Users/edwin/Documents/Programming/vim-plugins/telescope.nvim'
@@ -43,6 +43,8 @@ packer.startup(function(use)
   }
   use 'MunifTanjim/nui.nvim'
 
+  use 'wellle/context.vim'
+
   use { 'nvim-treesitter/nvim-treesitter',
     run = function()
       local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
@@ -50,25 +52,27 @@ packer.startup(function(use)
     end,
   } -- tree-sitter interface
 
-  -- LSP
-  use 'neovim/nvim-lspconfig'   -- LSP
-  use 'onsails/lspkind.nvim'    -- Pictograms for autocompletion
-  use 'hrsh7th/nvim-cmp'        -- Autocompletion
-  use 'hrsh7th/cmp-nvim-lsp'    -- nvim-cmp source for in-built LSP
-  use 'hrsh7th/cmp-buffer'      -- source for buffer
-  use 'hrsh7th/cmp-path'        -- Form filepaths
-  use 'hrsh7th/cmp-nvim-lsp-signature-help'        -- Form filepaths
-  use 'L3MON4D3/LuaSnip'        -- snippet engine
-  use 'mfussenegger/nvim-jdtls' -- Java LSP
+  use { 'folke/neodev.nvim', before = "nvim-lspconfig" }
 
-  use 'williamboman/mason.nvim' -- LSP plugin manager
+  -- LSP
+  use 'neovim/nvim-lspconfig'               -- LSP
+  use 'onsails/lspkind.nvim'                -- Pictograms for autocompletion
+  use 'hrsh7th/nvim-cmp'                    -- Autocompletion
+  use 'hrsh7th/cmp-nvim-lsp'                -- nvim-cmp source for in-built LSP
+  use 'hrsh7th/cmp-buffer'                  -- source for buffer
+  use 'hrsh7th/cmp-path'                    -- Form filepaths
+  use 'hrsh7th/cmp-nvim-lsp-signature-help' -- Form filepaths
+  use 'L3MON4D3/LuaSnip'                    -- snippet engine
+  use 'mfussenegger/nvim-jdtls'             -- Java LSP
+
+  use 'williamboman/mason.nvim'             -- LSP plugin manager
   use 'williamboman/mason-lspconfig.nvim'
 
-  use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'} -- Ultra Folding experience
+  use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' } -- Ultra Folding experience
 
   use({
     "folke/trouble.nvim",
-    dependencies = {"nvim-tree/nvim-web-devicons"},
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("trouble").setup {
         -- your configuration comes here
@@ -81,7 +85,7 @@ packer.startup(function(use)
   -- git
   use("tpope/vim-fugitive")
   use { 'akinsho/git-conflict.nvim', tag = '*',
-    config = function ()
+    config = function()
       require('git-conflict').setup()
     end
   }
@@ -91,11 +95,11 @@ packer.startup(function(use)
   use 'nvimtools/none-ls.nvim'    -- Set nvim as LSP
   use 'MunifTanjim/prettier.nvim' -- Prettier plugin for nvim
   use 'windwp/nvim-ts-autotag'
-  use 'windwp/nvim-autopairs' -- Bracket plugin
+  use 'windwp/nvim-autopairs'     -- Bracket plugin
   use {
     'numToStr/Comment.nvim',
     config = function()
-        require('Comment').setup()
+      require('Comment').setup()
     end
   }
 
@@ -111,6 +115,6 @@ packer.startup(function(use)
   end
 
   if packer_bootstrap then
-    require('packer').sync()
+    packer.sync()
   end
 end)
