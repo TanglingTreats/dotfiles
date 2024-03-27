@@ -59,12 +59,18 @@ telescope.setup {
       },
       theme = "dropdown",
       hijack_netrw = true,
+    },
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown({
+
+      })
     }
   }
 }
 
 -- Load file browser extension
 telescope.load_extension('file_browser')
+telescope.load_extension('ui-select')
 
 local opts = { noremap = true, silent = true }
 
