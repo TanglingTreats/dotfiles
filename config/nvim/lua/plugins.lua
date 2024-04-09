@@ -44,14 +44,14 @@ packer.startup(function(use)
   }
   use 'MunifTanjim/nui.nvim'
 
-  use 'wellle/context.vim'
-
   use { 'nvim-treesitter/nvim-treesitter',
     run = function()
       local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
       ts_update()
     end,
   } -- tree-sitter interface
+
+  use 'nvim-treesitter/nvim-treesitter-context'
 
   use { 'folke/neodev.nvim', before = "nvim-lspconfig" }
 

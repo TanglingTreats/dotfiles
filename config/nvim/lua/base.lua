@@ -37,3 +37,6 @@ set.foldenable = true
 --set.foldmethod = "syntax"
 
 set_local.updatetime = 100
+
+-- Cursorline highlight
+set.cursorline = true
