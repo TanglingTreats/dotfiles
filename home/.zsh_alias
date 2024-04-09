@@ -42,8 +42,6 @@ alias psql-start="pg_ctl -D /opt/homebrew/bin/postgres start"
 
 alias live-server="live-server --browser=firefox"
 
-alias mvn17="JAVA-HOME=/opt/homebrew/Cellar/openjdk@17/17.0.10/libexec/openjdk.jdk/Contents/Home && mvn clean package"
-
 alias editTex="vi *.tex"
 
 alias texToPdf="lualatex *.tex"
