@@ -36,7 +36,7 @@ then
     alias batt="upower -i $(upower -e | grep '/battery') | grep --color=never -E 'state|to full|to empty|percentage'"
 fi
 
-alias tmux-new="tmux new-session -A -s home -n dev"
+alias tmux-new="tmux -u new-session -A -s home -n dev"
 
 alias psql-start="pg_ctl -D /opt/homebrew/bin/postgres start"
 
