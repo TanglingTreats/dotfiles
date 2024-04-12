@@ -251,7 +251,7 @@ exec --no-startup-id feh --bg-max "$(< "${HOME}/.cache/wal/wal")"
 exec --no-startup-id wal -R -n
 
 # Start compton to enable transparency
-#exec_always picom
+exec_always picom
 
 # Start multitouch gestures
 # exec libinput-gestures-setup start
