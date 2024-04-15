@@ -30,6 +30,8 @@ keymap.set('n', 'zm', function() require('ufo').closeFoldsWith(1) end) -- closeA
 
 -- Fugitive commands
 keymap.set('n', '<leader>gg', function() vim.cmd("Git") end, opts)
-keymap.set('n', '<leader>gp', function() vim.cmd("Git push") end, opts)
+keymap.set('n', '<leader>gl', function() vim.cmd("Git log") end, opts)
+keymap.set('n', '<leader>gpp', function() vim.cmd("Git push") end, opts)
+keymap.set('n', '<leader>gpl', function() vim.cmd("Git push") end, opts)
 keymap.set('n', '<leader>gf', function() vim.cmd("Git diff") end, opts)
 keymap.set('n', '<leader>gc', function() vim.cmd("Git diff --cached") end, opts)
