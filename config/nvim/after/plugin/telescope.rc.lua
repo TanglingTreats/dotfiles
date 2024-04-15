@@ -2,12 +2,11 @@ local status, telescope = pcall(require, 'telescope')
 
 if (not status) then return end
 
-function telescope_buffer_dir()
+local function telescope_buffer_dir()
   return vim.fn.expand('%:p:h')
 end
 
 local actions = require('telescope.actions')
-local builtin = require('telescope.builtin')
 
 local fb_actions = telescope.extensions.file_browser.actions
 
@@ -20,11 +19,13 @@ telescope.setup {
     mappings = {
       i = {
         ["<C-h>"] = "which_key",
-        ["<C-c>"] = actions.close
+        ["<C-c>"] = actions.close,
+        ["<C-e>"] = actions.send_to_qflist + actions.open_qflist,
       },
       n = {
         ["<C-h>"] = "which_key",
         ["<C-c>"] = actions.close,
+        ["<C-e>"] = actions.send_to_qflist + actions.open_qflist,
       }
     },
   },
@@ -87,8 +88,10 @@ vim.keymap.set('n', '<leader>e',
     })
   end, opts)
 
+local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', function() builtin.find_files({ no_ignore = false, hidden = true }) end, opts)
-vim.keymap.set('n', '<leader>lg', builtin.live_grep, opts)
+vim.keymap.set('n', '<leader>lg', function() builtin.live_grep() end, opts)
+vim.keymap.set('n', '<leader>ps', function() builtin.grep_string({ search = vim.fn.input("Grep > ") }) end, opts)
 vim.keymap.set('n', '<leader>fb', function() builtin.buffers({ initial_mode = "normal" }) end, opts)
-vim.keymap.set('n', '<leader>ht', builtin.help_tags, opts)
-vim.keymap.set('n', '<leader>qf', builtin.quickfix, opts)
+vim.keymap.set('n', '<leader>ht', function() builtin.help_tags() end, opts)
+vim.keymap.set('n', '<leader>qf', function() builtin.quickfix() end, opts)

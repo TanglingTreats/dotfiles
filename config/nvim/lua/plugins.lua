@@ -85,7 +85,7 @@ packer.startup(function(use)
 
   -- git
   use("tpope/vim-fugitive")
-  use { 'akinsho/git-conflict.nvim', tag = '*',
+  use { 'akinsho/git-conflict.nvim', tag = 'v1.3.0',
     config = function()
       require('git-conflict').setup()
     end
