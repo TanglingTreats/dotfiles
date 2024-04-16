@@ -11,8 +11,19 @@ local function returnJdtlsPath()
   local switch = {}
   switch['macOS'] = "/opt/homebrew/bin/jdtls"
   switch['unix'] = "/usr/bin/jdtls"
+  switch['win'] = "C:\\Users\\d1331622\\scoop\\apps\\jdtls\\current\\bin\\jdtls.bat"
 
   return switch[os]
+end
+
+local function returnFormatSettingsUrl()
+  local os = util.getOS()
+  local switch = {}
+  switch['macOS'] = '/.config/nvim/lsp-config/code-style.xml'
+  switch['unix'] = '/.config/nvim/lsp-config/code-style.xml'
+  switch['win'] = '\\AppData\\Local\\nvim\\lsp-config\\code-style.xml'
+
+  return home .. switch[os]
 end
 
 local on_attach = function(client, bufnr)
@@ -57,8 +68,7 @@ local config = {
   },
   root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
 }
-
-local formatSettingsUrl = home .. '/.config/nvim/lsp-config/code-style.xml'
+local formatSettingsUrl = returnFormatSettingsUrl()
 config.settings = {
   java = {
     format = {
