@@ -34,9 +34,14 @@ set.foldcolumn = '1'
 set.foldlevel = 99
 set.foldlevelstart = 99
 set.foldenable = true
---set.foldmethod = "syntax"
 
 set_local.updatetime = 100
 
 -- Cursorline highlight
 set.cursorline = true
+
+-- Softwrap
+set.textwidth = 0
+set.wrapmargin = 0
+set.wrap = true
+set.linebreak = true
