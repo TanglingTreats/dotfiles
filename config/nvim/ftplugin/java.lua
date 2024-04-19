@@ -5,6 +5,7 @@ local home = os.getenv("HOME")
 local ustatus, util = pcall(require, 'util')
 if not ustatus then return; end
 
+local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 
 local function returnJdtlsPath()
   local os = util.getOS()
@@ -64,7 +65,8 @@ extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 local config = {
   cmd = {
     returnJdtlsPath(),
-    '-configuration', home .. '/.cache/config_linux'
+    '-configuration', home .. '/.cache/config_linux',
+    '-data', home .. '/.cache/jdtls-workspace' .. workspace_dir
   },
   root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
 }
