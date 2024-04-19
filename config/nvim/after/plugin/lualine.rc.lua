@@ -4,7 +4,7 @@ if (not status) then return end
 lualine.setup {
   options = {
     icons_enabled = true,
-    theme = 'gruvbox',
+    theme = 'everforest',
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
@@ -26,16 +26,16 @@ lualine.setup {
     lualine_c = {
       {
         'buffers',
-        use_mode_colors=true,
+        use_mode_colors = true,
         buffers_color = {
           -- Same values as the general color option can be used here.
           active = 'lualine_a_normal',     -- Color for active buffer.
           inactive = 'lualine_a_inactive', -- Color for inactive buffer.
         },
         symbols = {
-          modified = ' ●',      -- Text to show when the buffer is modified
+          modified = ' ●', -- Text to show when the buffer is modified
           alternate_file = ' ', -- Text to show to identify the alternate file
-          directory =  '',     -- Text to show when the buffer is a directory
+          directory = '', -- Text to show when the buffer is a directory
         },
       }
     },
