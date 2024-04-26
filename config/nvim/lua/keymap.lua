@@ -15,8 +15,11 @@ keymap.set("n", "<Tab>", "<cmd>bnext<CR>", opts)
 
 
 keymap.set("n", "<F6>", ":setlocal spell! spelllang=en_gb<CR>", { silent = true })
--- Remove search highlight
-keymap.set("n", "<BSlash>", ":nohlsearch<Bar>:echo<CR>", { silent = true })
+keymap.set("n", "<BSlash>", ":nohlsearch<Bar>:echo<CR>", { silent = true }) -- Remove search highlight
+
+
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Folding shortcuts
 local status, ufo = pcall(require, "ufo");

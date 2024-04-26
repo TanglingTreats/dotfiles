@@ -17,7 +17,7 @@ if (not status) then
   return
 end
 
-local status, dev_paths = pcall(require, 'dev')
+local dev_status, dev_paths = pcall(require, 'dev')
 
 vim.cmd [[packadd packer.nvim]]
 
@@ -86,6 +86,9 @@ packer.startup(function(use)
       }
     end
   })
+
+  -- Copilot
+  use("github/copilot.vim")
 
   -- git
   use("tpope/vim-fugitive")
