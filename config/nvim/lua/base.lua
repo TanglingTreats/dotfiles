@@ -20,7 +20,7 @@ set.expandtab = true
 set.tabstop = 2
 set.shiftwidth = 2
 -- Character limit
-set.colorcolumn = "80"
+set.colorcolumn = "120"
 
 -- General
 set.bg = "dark"
