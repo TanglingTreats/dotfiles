@@ -87,6 +87,9 @@ packer.startup(function(use)
     end
   })
 
+  -- Copilot
+  use("github/copilot.vim")
+
   -- git
   use("tpope/vim-fugitive")
   use { 'akinsho/git-conflict.nvim', tag = 'v1.3.0',
