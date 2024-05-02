@@ -10,8 +10,7 @@ local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local function returnJdtlsPath()
   local os = util.getOS()
   local switch = {}
-  switch['macOS'] = "/opt/homebrew/bin/jdtls"
-  switch['unix'] = "/usr/bin/jdtls"
+  switch['unix'] = home .. "/.local/share/nvim/mason/share/jdtls/plugins/org.eclipse.equinox.launcher.jar"
   switch['win'] = "C:\\Users\\d1331622\\scoop\\apps\\jdtls\\current\\bin\\jdtls.bat"
 
   return switch[os]
@@ -20,11 +19,19 @@ end
 local function returnFormatSettingsUrl()
   local os = util.getOS()
   local switch = {}
-  switch['macOS'] = '/.config/nvim/lsp-config/code-style.xml'
   switch['unix'] = '/.config/nvim/lsp-config/code-style.xml'
   switch['win'] = '\\AppData\\Local\\nvim\\lsp-config\\code-style.xml'
 
   return home .. switch[os]
+end
+
+local function returnCacheFolder()
+  local os = util.getOS()
+  local switch = {}
+  switch['unix'] = '/.local/share/nvim/mason/packages/jdtls/config_linux'
+  switch['win'] = '/config_win'
+
+  return switch[os]
 end
 
 local on_attach = function(client, bufnr)
@@ -64,8 +71,16 @@ extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
 local config = {
   cmd = {
-    returnJdtlsPath(),
-    '-configuration', home .. '/.cache/config_linux',
+    'java',
+    '-Declipse.application=org.eclipse.jdt.ls.core.id1',
+    '-Dosgi.bundles.defaultStartLevel=4',
+    '-Declipse.product=org.eclipse.jdt.ls.core.product',
+    '-Dlog.protocol=true',
+    '-Dlog.level=ALL',
+    '-javaagent:' .. home .. '/.local/share/nvim/mason/share/jdtls/lombok.jar',
+    '-Xmx4g',
+    '-jar', returnJdtlsPath(),
+    '-configuration', home .. returnCacheFolder(),
     '-data', home .. '/.cache/jdtls-workspace' .. workspace_dir
   },
   root_dir = vim.fs.dirname(vim.fs.find({ 'gradlew', '.git', 'mvnw' }, { upward = true })[1]),
