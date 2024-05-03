@@ -200,7 +200,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 # ------------ Application -------------
 
-# Start brave in Workspace 2
+# Workspace 2: Web
 bindsym $mod+Shift+b exec brave
 for_window [class="Brave-browser"] move to workspace $ws2
 for_window [class="firefox"] move to workspace $ws2
@@ -208,19 +208,22 @@ for_window [class="firefox"] move to workspace $ws2
 for_window [class="Brave-browser" window_role="pop-up"] floating enable
 for_window [class="firefox" window_role="pop-up"] floating enable
 
-# Move runelite client to workspace 3
+# Workspace 3: Gaming 
 for_window [class="net-runelite-client-RuneLite"] move to workspace $ws3
+for_window [class="Steam"] move to workspace $ws3
 
+# Workspace 6: Virtual Machines
 for_window [class="VirtualBox Machine"] move to workspace $ws6
 for_window [class="Virt-manager" title="Virtual Machine Manager"] move to workspace $ws6
 
-# Start Spotify
+# Workspace 7: Spotify
 bindsym $mod+Shift+m exec spotify
 for_window [class="Spotify"] move to workspace $ws7
 
+# Workspace 8: Telegram
 for_window [class="TelegramDesktop"] move to workspace $ws8
 
-# Move discord to workspace 10
+# Workspace 9: Discord
 for_window [class="discord"] move to workspace $ws9
 
 # Start ranger file manager
