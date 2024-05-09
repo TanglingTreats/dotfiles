@@ -12,7 +12,12 @@ local fb_actions = telescope.extensions.file_browser.actions
 
 telescope.setup {
   defaults = {
-    -- buffer_previewer_maker = new_maker,
+    layout_config = {
+      horizontal = {
+        prompt_position = "bottom",
+        preview_width = 0.45,
+      },
+    },
     file_ignore_patterns = {
       "node_modules", ".git", "yarn.lock"
     },
@@ -58,7 +63,6 @@ telescope.setup {
           end,
         }
       },
-      theme = "dropdown",
       hijack_netrw = true,
     },
     ["ui-select"] = {
@@ -84,7 +88,6 @@ vim.keymap.set('n', '<leader>e',
       hidden = true,
       grouped = true,
       previewer = true,
-      layout_config = { height = 28 }
     })
   end, opts)
 
