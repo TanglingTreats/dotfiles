@@ -42,9 +42,9 @@ alias psql-start="pg_ctl -D /opt/homebrew/bin/postgres start"
 
 alias live-server="live-server --browser=firefox"
 
-alias editTex="vi *.tex"
+alias edittex="vi *.tex"
 
-alias texToPdf="lualatex *.tex"
+alias textopdf="lualatex *.tex"
 
 alias mapleroyals="cd ~/.wine32MR/drive-c/MapleRoyals/ && env DRI_PRIME=1 WINEPREFIX=/home/edwin/.wine32MR wine MapleRoyals.exe"
 
