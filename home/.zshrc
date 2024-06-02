@@ -125,7 +125,7 @@ then
     export PATH="$PATH:$HOME/.config/emacs/bin"
 
     # Add JDK to new variable
-    export JDK_HOME="/usr/lib/jvm/java-11-openjdk/"
+    export JDK_HOME="/usr/lib/jvm/default/"
 
     eval "$(zoxide init zsh)"
 
@@ -143,6 +143,8 @@ then
     export PATH="$PATH:$HOME/.config/emacs/bin"
     export PATH="$PATH:$NUTCH_RUNTIME_HOME/bin"
     export PATH="$PATH:$GOBIN"
+
+    export PATH="$PATH:/opt/homebrew/opt/mariadb@10.6/bin"
 
     export JAVA_HOME="$(/usr/libexec/java_home)"
 
@@ -189,4 +191,3 @@ LC_ALL=en_US.UTF-8
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="/opt/homebrew/opt/mariadb@10.6/bin:$PATH"
