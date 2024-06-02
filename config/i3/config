@@ -210,7 +210,7 @@ for_window [class="firefox" window_role="pop-up"] floating enable
 
 # Workspace 3: Gaming 
 for_window [class="net-runelite-client-RuneLite"] move to workspace $ws3
-for_window [class="Steam"] move to workspace $ws3
+for_window [class="steam"] move to workspace $ws3
 
 # Workspace 6: Virtual Machines
 for_window [class="VirtualBox Machine"] move to workspace $ws6
