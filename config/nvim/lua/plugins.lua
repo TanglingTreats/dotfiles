@@ -88,7 +88,7 @@ packer.startup(function(use)
   })
 
   -- Copilot
-  use("github/copilot.vim")
+  -- use("github/copilot.vim")
 
   -- git
   use("tpope/vim-fugitive")
