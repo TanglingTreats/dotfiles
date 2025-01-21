@@ -68,11 +68,18 @@
 ;; Vimish fold unfold
 (vimish-fold-global-mode 1)
 
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1) ;; enable ido mode
+
+(tab-bar-mode 0)
+(global-tab-line-mode 0)
 
 (require 'elfeed-goodies)
 (elfeed-goodies/setup)
 (setq elfeed-goodies/entry-pane-size 0.5)
 
+;; ------------------------------------------------------------------------
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
