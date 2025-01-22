@@ -75,6 +75,9 @@
 (tab-bar-mode 0)
 (global-tab-line-mode 0)
 
+(require 'evil-multiedit)
+(evil-multiedit-default-keybinds)
+
 (require 'elfeed-goodies)
 (elfeed-goodies/setup)
 (setq elfeed-goodies/entry-pane-size 0.5)
