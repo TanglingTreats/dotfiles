@@ -2,7 +2,7 @@
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
-
+(load-file "~/.config/doom/keybindings.el")
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
@@ -18,7 +18,8 @@
 ;; - `doom-unicode-font' -- for unicode glyphs
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
 
-(setq doom-font (font-spec :size 15))
+(setq doom-font (font-spec :family "Mononoki Nerd Font" :size 16))
+(setq doom-symbol-font (font-spec :family "Symbols Nerd Font" :size 16))
 ;;
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
