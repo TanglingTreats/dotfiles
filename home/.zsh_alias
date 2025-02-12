@@ -31,11 +31,6 @@ alias connect-personal="ssh edwin@personal_drop"
 
 alias heli-x="$HOME/Documents/Personal/HELI-X9/runHELI-X.sh"
 
-if [ "${HOST}" = "arch-treatspad" ]
-then
-    alias batt="upower -i $(upower -e | grep '/battery') | grep --color=never -E 'state|to full|to empty|percentage'"
-fi
-
 alias tmux-new="tmux -u new-session -A -s home -n dev"
 
 alias psql-start="pg_ctl -D /opt/homebrew/bin/postgres start"
@@ -51,3 +46,8 @@ alias mapleroyals="cd ~/.wine32MR/drive-c/MapleRoyals/ && env DRI_PRIME=1 WINEPR
 alias cd=z
 
 alias spring-run="mvn spring-boot:run"
+
+if [ "${HOST}" = "arch-treatspad" ]
+then
+    alias batt="upower -i $(upower -e | grep '/battery') | grep --color=never -E 'state|to full|to empty|percentage'"
+fi
