@@ -180,7 +180,7 @@
     "on-click": "~/.config/desktop-config/settings/system-monitor.sh"
   },
 
-  // Harddisc space used
+  // Hard disc space used
   "disk": {
     "interval": 30,
     "format": "D {percentage_used}% ",
