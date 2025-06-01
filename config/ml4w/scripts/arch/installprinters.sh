@@ -52,7 +52,7 @@ echo
 echo ":: Installing printer system complete"
 sleep 2
 
-if [ -f ~/.config/ml4w/settings/printer-drivers.sh ] ;then
+if [ -f ~/.config/desktop-config/settings/printer-drivers.sh ] ;then
     if gum confirm "DO YOU WANT TO INSTALL PRINTER DRIVERS NOW?" ;then
     echo
     echo ":: Install started."

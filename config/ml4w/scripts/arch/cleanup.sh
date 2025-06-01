@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-aur_helper="$(cat ~/.config/ml4w/settings/aur.sh)"
+aur_helper="$(cat ~/.config/desktop-config/settings/aur.sh)"
 figlet -f smslant "Cleanup"
 echo
 $aur_helper -Scc

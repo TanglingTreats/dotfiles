@@ -22,8 +22,8 @@ sddm_theme_name="sequoia"
 sddm_asset_folder="/usr/share/sddm/themes/$sddm_theme_name/backgrounds"
 
 sddm_theme_tpl="/usr/share/ml4w-hyprland/sddm/theme.conf"
-if [ -f $HOME/.config/ml4w/settings/sddm/theme.conf ]; then
-    sddm_theme_tpl="$HOME/.config/ml4w/settings/sddm/theme.conf"
+if [ -f $HOME/.config/desktop-config/settings/sddm/theme.conf ]; then
+    sddm_theme_tpl="$HOME/.config/desktop-config/settings/sddm/theme.conf"
     echo ":: Using custum theme.conf"
 fi
 

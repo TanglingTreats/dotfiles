@@ -6,7 +6,7 @@
 # /_/   \_\__,_|\__\___/     \_/\_/  |_|    
 #                                          
 
-sec=$(cat ~/.config/ml4w/settings/wallpaper-automation.sh)
+sec=$(cat ~/.config/desktop-config/settings/wallpaper-automation.sh)
 _setWallpaperRandomly() {
     waypaper --random
     echo ":: Next wallpaper in 60 seconds..."

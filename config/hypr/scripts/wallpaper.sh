@@ -10,7 +10,7 @@
 # Check to use wallpaper cache
 # ----------------------------------------------------- 
 
-if [ -f ~/.config/ml4w/settings/wallpaper_cache ]; then
+if [ -f ~/.config/desktop-config/settings/wallpaper_cache ]; then
     use_cache=1
     echo ":: Using Wallpaper Cache"
 else
@@ -23,15 +23,15 @@ fi
 # ----------------------------------------------------- 
 
 force_generate=0
-generatedversions="$HOME/.config/ml4w/cache/wallpaper-generated"
-waypaperrunning=$HOME/.config/ml4w/cache/waypaper-running
-cachefile="$HOME/.config/ml4w/cache/current_wallpaper"
-blurredwallpaper="$HOME/.config/ml4w/cache/blurred_wallpaper.png"
-squarewallpaper="$HOME/.config/ml4w/cache/square_wallpaper.png"
-rasifile="$HOME/.config/ml4w/cache/current_wallpaper.rasi"
-blurfile="$HOME/.config/ml4w/settings/blur.sh"
+generatedversions="$HOME/.config/desktop-config/cache/wallpaper-generated"
+waypaperrunning=$HOME/.config/desktop-config/cache/waypaper-running
+cachefile="$HOME/.config/desktop-config/cache/current_wallpaper"
+blurredwallpaper="$HOME/.config/desktop-config/cache/blurred_wallpaper.png"
+squarewallpaper="$HOME/.config/desktop-config/cache/square_wallpaper.png"
+rasifile="$HOME/.config/desktop-config/cache/current_wallpaper.rasi"
+blurfile="$HOME/.config/desktop-config/settings/blur.sh"
 defaultwallpaper="$HOME/wallpaper/default.jpg"
-wallpapereffect="$HOME/.config/ml4w/settings/wallpaper-effect.sh"
+wallpapereffect="$HOME/.config/desktop-config/settings/wallpaper-effect.sh"
 blur="50x30"
 blur=$(cat $blurfile)
 

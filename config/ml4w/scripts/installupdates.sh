@@ -8,7 +8,7 @@
 
 sleep 1
 clear
-install_platform="$(cat ~/.config/ml4w/settings/platform.sh)"
+install_platform="$(cat ~/.config/desktop-config/settings/platform.sh)"
 figlet -f smslant "Updates"
 echo
 
@@ -51,7 +51,7 @@ return; #false
 # Check if platform is supported
 case $install_platform in
     arch)
-        aur_helper="$(cat ~/.config/ml4w/settings/aur.sh)"
+        aur_helper="$(cat ~/.config/desktop-config/settings/aur.sh)"
 
         if [[ $(_isInstalled "timeshift") == "0" ]] ;then                                        
             echo
