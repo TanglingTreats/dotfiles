@@ -1,6 +1,5 @@
 #! /usr/bin/env bash
 
-
 # Sets paths
 base_dir=$HOME/dotfiles
 

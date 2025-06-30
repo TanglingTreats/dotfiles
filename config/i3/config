@@ -240,8 +240,9 @@ bindsym $mod+Shift+o exec convert -resize $(xdpyinfo | grep dimensions | cut -d\
 #bindsym $mod+Shift+o exec i3lock -u --image ~/Pictures/wallpaper/momentum-vector.png
 
 # ------------ Startup ----------------
+# Start audio service; sleep to minimize race condition
 # Start polybar
-exec_always --no-startup-id sleep 1 && ~/.config/polybar/launch.sh
+exec_always --no-startup-id ~/.local/scripts/pipeaudio.sh && sleep 1 && ~/.config/polybar/launch.sh
 
 # Start clipboard manager on startup
 exec --no-startup-id sleep 1 && xfce4-clipman
@@ -253,8 +254,9 @@ exec --no-startup-id feh --bg-max "$(< "${HOME}/.cache/wal/wal")"
 # Use pywal to sync color scheme
 exec --no-startup-id wal -R -n
 
+
 # Start compton to enable transparency
-# exec_always picom
+exec_always picom
 
 # Start multitouch gestures
 # exec libinput-gestures-setup start
