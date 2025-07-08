@@ -18,13 +18,13 @@ prompt='Screenshot'
 mesg="DIR: ~/Screenshots"
 
 # Screenshot Filename
-source ~/.config/ml4w/settings/screenshot-filename.sh
+source ~/.config/desktop-config/settings/screenshot-filename.sh
 
 # Screenshot Folder
-source ~/.config/ml4w/settings/screenshot-folder.sh
+source ~/.config/desktop-config/settings/screenshot-folder.sh
 
 # Screenshot Editor
-export GRIMBLAST_EDITOR="$(cat ~/.config/ml4w/settings/screenshot-editor.sh)"
+export GRIMBLAST_EDITOR="$(cat ~/.config/desktop-config/settings/screenshot-editor.sh)"
 
 # Example for keybindings
 # bind = SUPER, p, exec, grimblast save active

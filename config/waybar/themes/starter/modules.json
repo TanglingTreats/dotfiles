@@ -142,13 +142,13 @@
     // Browser Launcher
     "custom/browser": {
         "format": "",
-        "on-click": "~/.config/ml4w/settings/browser.sh",
+        "on-click": "~/.config/desktop-config/settings/browser.sh",
         "tooltip": false
     },    
 
     // ML4W Welcome App
     "custom/ml4w-welcome": {
-        "on-click": "sleep 0.1 && ~/.config/ml4w/settings/ml4w-sidebar.sh",
+        "on-click": "sleep 0.1 && ~/.config/desktop-config/settings/ml4w-sidebar.sh",
         "on-click-right": "sleep 0.1 && com.ml4w.welcome",
         "format": " ",
         "tooltip-format": "Open Sidebar"

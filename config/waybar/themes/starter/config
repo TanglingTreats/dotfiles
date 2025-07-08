@@ -27,7 +27,7 @@
 
     // Load Modules
     "include": [
-        "~/.config/ml4w/settings/waybar-quicklinks.json",
+        "~/.config/desktop-config/settings/waybar-quicklinks.json",
         "~/.config/waybar/themes/starter/modules.json"
     ],
 

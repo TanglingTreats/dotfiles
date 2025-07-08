@@ -21,13 +21,13 @@ sleep 0.5
 themestyle="/ml4w;/ml4w/light"
 
 # ----------------------------------------------------- 
-# Get current theme information from ~/.config/ml4w/settings/waybar-theme.sh
+# Get current theme information from ~/.config/desktop-config/settings/waybar-theme.sh
 # ----------------------------------------------------- 
-if [ -f ~/.config/ml4w/settings/waybar-theme.sh ]; then
-    themestyle=$(cat ~/.config/ml4w/settings/waybar-theme.sh)
+if [ -f ~/.config/desktop-config/settings/waybar-theme.sh ]; then
+    themestyle=$(cat ~/.config/desktop-config/settings/waybar-theme.sh)
 else
-    touch ~/.config/ml4w/settings/waybar-theme.sh
-    echo "$themestyle" > ~/.config/ml4w/settings/waybar-theme.sh
+    touch ~/.config/desktop-config/settings/waybar-theme.sh
+    echo "$themestyle" > ~/.config/desktop-config/settings/waybar-theme.sh
 fi
 
 IFS=';' read -ra arrThemes <<< "$themestyle"
