@@ -6,7 +6,7 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "Edwin Tang"
+(setq user-full-name "Fool Stacked"
       user-mail-address "foolstacked@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
@@ -82,6 +82,9 @@
 (require 'elfeed-goodies)
 (elfeed-goodies/setup)
 (setq elfeed-goodies/entry-pane-size 0.5)
+
+(setq company-idle-delay 0.1)
+(setq company-minimum-prefix-length 1)
 
 ;; ------------------------------------------------------------------------
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
