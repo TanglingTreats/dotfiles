@@ -49,9 +49,7 @@
 (set-locale-environment "en_US.UTF-8")
 
 
-;; (after! evil-snipe
-;;   (evil-snipe-mode -1))
-(map! :map general-override-mode-map :nv "s" #'evil-substitute)
+(map! :n "\\" #'evil-ex-nohighlight) ;; Rebind back slash from run next command
 
 (add-hook 'prog-mode-hook #'visual-line-mode)
 (add-hook 'text-mode-hook #'visual-line-mode)
@@ -85,6 +83,9 @@
 
 (setq company-idle-delay 0.1)
 (setq company-minimum-prefix-length 1)
+
+;; Lsp Mode
+(setq lsp-keep-workspace-alive nil)
 
 ;; ------------------------------------------------------------------------
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
