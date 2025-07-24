@@ -11,7 +11,6 @@ function OnViModeChange {
     }
 }
 Set-PSReadlineOption -EditMode vi -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
-#Set-PSReadlineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
 
 # Aliases
 Set-Alias vim nvim
