@@ -79,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPAGER="nvim +Man!"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -152,12 +152,6 @@ then
     eval "$(zoxide init zsh)"
 fi
 
-# Set up Android PATH for development
-#export ANDROID_HOME=$HOME/Android/Sdk
-#export PATH=$PATH:$ANDROID_HOME/emulator
-#export PATH=$PATH:$ANDROID_HOME/tools
-#export PATH=$PATH:$ANDROID_HOME/tools/bin
-#export PATH=$PATH:$ANDROID_HOME/platform-tools
 if [ -f "$HOME/.zsh_alias" ]
 then
   source $HOME/.zsh_alias
@@ -183,9 +177,11 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+# ------------ VI mode ----------------
 
 LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.nvm"

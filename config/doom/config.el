@@ -35,7 +35,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-gruvbox)
+(setq doom-theme 'doom-one)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -77,9 +77,9 @@
 (require 'evil-multiedit)
 (evil-multiedit-default-keybinds)
 
-(require 'elfeed-goodies)
-(elfeed-goodies/setup)
-(setq elfeed-goodies/entry-pane-size 0.5)
+;;(require 'elfeed-goodies)
+;;(elfeed-goodies/setup)
+;;(setq elfeed-goodies/entry-pane-size 0.5)
 
 (setq company-idle-delay 0.1)
 (setq company-minimum-prefix-length 1)

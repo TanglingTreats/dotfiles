@@ -43,7 +43,7 @@ alias textopdf="lualatex *.tex"
 
 alias mapleroyals="cd ~/.wine32MR/drive-c/MapleRoyals/ && env DRI_PRIME=1 WINEPREFIX=/home/edwin/.wine32MR wine MapleRoyals.exe"
 
-alias cd=z
+alias weather="curl wttr.in/~singapore"
 
 alias spring-run="mvn spring-boot:run"
 

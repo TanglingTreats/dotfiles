@@ -13,3 +13,6 @@
     (forward-char column)))
 
 (global-set-key (kbd "C-,") 'duplicate-line)
+
+(map! :leader (:prefix ("d" . "describe")
+                           :desc "Open manual entry" "m" #'manual-entry))
