@@ -1,5 +1,5 @@
 # Modules
-oh-my-posh init pwsh --config 'C:/Users/edwin/Posh/bubblesextra.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config "$(Convert-Path ~/Posh/bubblesextra.omp.json)" | Invoke-Expression
 
 function OnViModeChange {
     if ($args[0] -eq 'Command') {
@@ -11,7 +11,6 @@ function OnViModeChange {
     }
 }
 Set-PSReadlineOption -EditMode vi -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
-#Set-PSReadlineOption -ViModeIndicator Script -ViModeChangeHandler $Function:OnViModeChange
 
 # Aliases
 Set-Alias vim nvim
