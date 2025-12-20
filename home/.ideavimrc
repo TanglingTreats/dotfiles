@@ -3,3 +3,6 @@ set number
 
 set expandtab
 set shiftwidth = 4
+
+nmap <TAB> <Action>(NextTab)
+nmap <S-TAB> <Action>(PreviousTab)

@@ -18,7 +18,7 @@ sleep 0.5
 # ----------------------------------------------------- 
 # Default theme: /THEMEFOLDER;/VARIATION
 # ----------------------------------------------------- 
-themestyle="/ml4w;/ml4w/light"
+themestyle="/ml4w;/ml4w/black"
 
 # ----------------------------------------------------- 
 # Get current theme information from ~/.config/desktop-config/settings/waybar-theme.sh
@@ -34,7 +34,7 @@ IFS=';' read -ra arrThemes <<< "$themestyle"
 echo ":: Theme: ${arrThemes[0]}"
 
 if [ ! -f ~/.config/waybar/themes${arrThemes[1]}/style.css ]; then
-    themestyle="/ml4w;/ml4w/light"
+    themestyle="/ml4w;/ml4w/dark"
 fi
 
 # ----------------------------------------------------- 

@@ -35,7 +35,7 @@ configuration {
 @theme "~/.cache/wal/colors-rofi-pywal"
 
 /* ---- Load wallpaper ---- */
-@import "~/.config/ml4w/cache/current_wallpaper.rasi"
+/*@import "~/.config/ml4w/cache/current_wallpaper.rasi" */
 
 /* ---- Load border width ---- */
 @import "~/.config/desktop-config/settings/rofi-border.rasi"
