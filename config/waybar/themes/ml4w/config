@@ -9,8 +9,8 @@
 // ----------------------------------------------------- 
 //
 {
-    // General Settings
-    "layer": "top",
+  // General Settings
+  "layer": "top",
     "margin-top": 14,
     "margin-bottom": 0,
     "margin-left": 14,
@@ -19,38 +19,40 @@
 
     // Load Modules
     "include": [    
-        "~/.config/desktop-config/settings/waybar-quicklinks.json",
-        "~/.config/waybar/modules.json"
+      "~/.config/desktop-config/settings/waybar-quicklinks.json",
+      "~/.config/waybar/modules.json"
     ],
 
     // Modules Left
     "modules-left": [
-"custom/appmenu",
-        "group/links",
-//"wlr/taskbar",
-        "group/quicklinks",
-"hyprland/window",
-        "custom/empty"
+      "custom/appmenu",
+      "group/links",
+      //"wlr/taskbar",
+      "group/quicklinks",
+      "hyprland/window",
+      "custom/empty"
     ],
 
     // Modules Center
     "modules-center": [
-        "hyprland/workspaces"
+      "hyprland/workspaces"
     ],
 
     // Modules Right    
     "modules-right": [
-        "custom/updates",
-        "pulseaudio",
-//"backlight",
-        "bluetooth",
-        "battery", 
-"network",
-        "group/hardware",
-        "group/tools",
-"tray",
-        "custom/exit",
-        "custom/ml4w-welcome",
-        "clock"
+      "custom/updates",
+      "disk",
+      "cpu",
+      "memory",
+      "pulseaudio",
+      //"backlight",
+      "bluetooth",
+      "battery",
+      "network",
+      //"group/hardware",
+      "group/tools",
+      "tray",
+      "custom/exit",
+      "clock"
     ]
 }

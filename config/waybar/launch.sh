@@ -18,7 +18,7 @@ sleep 0.5
 # ----------------------------------------------------- 
 # Default theme: /THEMEFOLDER;/VARIATION
 # ----------------------------------------------------- 
-themestyle="/ml4w;/ml4w/black"
+themestyle="/ml4w;/ml4w/dark"
 
 # ----------------------------------------------------- 
 # Get current theme information from ~/.config/desktop-config/settings/waybar-theme.sh

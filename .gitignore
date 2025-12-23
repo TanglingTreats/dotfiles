@@ -1,5 +1,6 @@
 .vim/
 
 config/nvim/plugin/packer_compiled.lua
+config/hypr/scripts/log/
 
 **/dev.lua
