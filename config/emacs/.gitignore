@@ -1,0 +1,13 @@
+.cache/
+/.dap-breakpoints
+/.lsp-session-v1
+/.org-id-locations
+/auto-save-list/
+/eclipse.jdt.ls/
+/eln-cache/
+/elpa/
+/projectile-bookmarks.eld
+/transient/
+/tree-sitter/
+/var/
+/workspace
