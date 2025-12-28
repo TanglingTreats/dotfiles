@@ -1,0 +1,36 @@
+#+TITLE: Example Technical Document
+#+DESCRIPTION: Literate programming
+
+* Summary
+This document outlines setup and testing steps for the application in detail. It also contains scripts that needs to be executed.
+
+* Information
+** Introduction
+This app helps to organise user's TODOs by classifying each TODO item and re-arranging it based on past behavior. Additionally, the app sends reminders to the user as the deadline (if configured) approaches.
+
+** Technologies Used
+The app is built mobile-first with native integration in mind. Therefore, both Android Kotlin and iOS Swift are used and maintained as separate codebases.
+
+* Setup
+** Development Environment
+
+Since the app is developed natively, we opt to use the respective IDEs on both platforms for development. Android Studio for Android development and XCode for iOS development.
+** Build Script
+:PROPERTIES:
+:Target: Android
+:Type: Debug
+:ReleaseVersion: 1.0
+:DebugVersion: 1.03
+:END:
+
+To simplify the build process via our Jenkins pipeline, we have written a single build script to build both codebases at the same time.
+
+#+NAME: Build App
+#+HEADER: :results silent
+#+HEADER: :var target=(org-entry-get nil "Target" t)
+#+HEADER: :var type=(org-entry-get nil "Type" t)
+#+HEADER: :var release_version=(org-entry-get nil "ReleaseVersion" t)
+#+HEADER: :var debug_version=(org-entry-get nil "DebugVersion" t)
+#+BEGIN_SRC sh
+  ~/Documents/org/example-tech-script/build-script.sh $target $type $release_version $debug_version
+#+END_SRC
