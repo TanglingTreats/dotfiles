@@ -6,6 +6,9 @@
 (when (file-exists-p package-path)
   (load package-path))
 
+;; Set font
+(set-face-attribute 'default nil :family "MononokiNerdFont" :height 120)
+
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (menu-bar-mode 0)
@@ -15,6 +18,7 @@
 
 (setq column-number-mode t)
 
+;; Backup directory
 (setq backup-directory-alist '(("." . "~/.config/emacs/var/backups/")))
 (setq auto-save-file-name-transforms '((".*" "~/.config/emacs/var/auto-saves/" t)))
 ;; Create the directories if they don't exist
