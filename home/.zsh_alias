@@ -16,18 +16,13 @@ alias discord="discord --no-sandbox"
 alias vi="nvim"
 alias vim="nvim"
 
+alias qemu="qemu-system-x86_64"
+
 alias ec="emacsclient"
 
 alias connect-school="sshpass -p $vm_pass ssh $vm_user@$vm_host"
 
 alias screen-record-ext="recordmydesktop --device pulse --display $DISPLAY -x 1920 --width 1920 --height 1080 --fps 30 --freq 4500 --channels 2"
-
-alias logout-onedrive="onedrive --logout --confdir \"~/.config/onedrive-school\""
-
-alias connect-pi="ssh edwin@archpi4 -p 1222"
-alias connect-pi-alias="ssh edwin@archpi4 -p 1222"
-
-alias connect-personal="ssh edwin@personal_drop"
 
 alias heli-x="$HOME/Documents/Personal/HELI-X9/runHELI-X.sh"
 
@@ -41,11 +36,21 @@ alias edittex="vi *.tex"
 
 alias textopdf="lualatex *.tex"
 
-alias mapleroyals="cd ~/.wine32MR/drive-c/MapleRoyals/ && env DRI_PRIME=1 WINEPREFIX=/home/edwin/.wine32MR wine MapleRoyals.exe"
+alias mapleroyals="cd ~/.wine32MR/drive_c/MapleRoyals/ && env DRI_PRIME=1 WINEPREFIX=/home/treats/.wine32MR wine MapleRoyals.exe"
+alias play_fantasia="cd ~/.wine32/drive_c/Program Files/Fantasia && env DRI_PRIME=1 WINEPREFIX=/home/treats/.wine32 wine Fantasia.exe"
 
 alias weather="curl wttr.in/~singapore"
 
 alias spring-run="mvn spring-boot:run"
+
+
+alias start_win="qemu-system-x86_64 -drive file=$HOME/DImages/win10.img,if=ide \
+  -smp 8 \
+  -m 24G \
+  -audiodev pa,id=snd0,server=/run/user/1000/pulse/native,in.latency=20000,out.latency=20000,in.mixing-engine=off,out.mixing-engine=off \
+  -device ich9-intel-hda \
+  -device hda-output,audiodev=snd0 \
+  -enable-kvm "
 
 if [ "${HOST}" = "arch-treatspad" ]
 then
