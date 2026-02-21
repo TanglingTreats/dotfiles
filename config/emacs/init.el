@@ -43,3 +43,18 @@
 
 (global-set-key (kbd "C-<up>") 'scroll-down-line)
 (global-set-key (kbd "C-<down>") 'scroll-up-line)
+
+(defun convert-num(num)
+  "Convert a decimal or hex number into the other form"
+  (interactive "sEnter a number: ")
+  (if (string-match-p "^0x[0-9a-fA-F]+$" num)
+      (message "%d" (string-to-number (substring num 2) 16)) ;; If number is hex
+    (if (string-match-p "^[0-9]+$" num)  ;; If number is decimal
+	(message "0x%X" (string-to-number num))
+      (message "Input isn't a valid number"))
+    )
+  )
+
+(global-set-key (kbd "C-c h") 'convert-num)
+
+(global-set-key (kbd "C-x C-b") 'buffer-menu-other-window)

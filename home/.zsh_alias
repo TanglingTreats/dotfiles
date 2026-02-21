@@ -45,7 +45,7 @@ alias spring-run="mvn spring-boot:run"
 
 
 alias start_win="qemu-system-x86_64 -drive file=$HOME/DImages/win10.img,if=ide \
-  -smp 8 \
+  -smp 10 \
   -m 24G \
   -audiodev pa,id=snd0,server=/run/user/1000/pulse/native,in.latency=20000,out.latency=20000,in.mixing-engine=off,out.mixing-engine=off \
   -device ich9-intel-hda \
