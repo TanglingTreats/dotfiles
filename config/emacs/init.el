@@ -31,6 +31,15 @@
 ;; Java configuration
 (use-package lsp-java :config (add-hook 'java-mode-hook 'lsp))
 
+;; Golang Org-Babel mode
+(require 'ob-go)
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((go . t)
+   (python . t)
+   )
+ )
+
 ;; Visual fill mode
 (global-visual-line-mode 1)
 

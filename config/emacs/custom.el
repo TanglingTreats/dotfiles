@@ -8,7 +8,7 @@
  '(org-babel-load-languages '((emacs-lisp . t) (shell . t) (org . t)))
  '(package-selected-packages
    '(## company eglot-inactive-regions go-mode lsp-java magit
-	multiple-cursors projectile rust-mode rustic
+	multiple-cursors ob-go projectile rust-mode rustic
 	visual-fill-column vterm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
