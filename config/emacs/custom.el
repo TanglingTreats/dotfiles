@@ -7,7 +7,7 @@
  '(custom-enabled-themes '(misterioso))
  '(org-babel-load-languages '((emacs-lisp . t) (shell . t) (org . t)))
  '(package-selected-packages
-   '(## company eglot-inactive-regions go-mode lsp-java magit
+   '(## ccls company eglot-inactive-regions go-mode lsp-java magit
 	multiple-cursors ob-go projectile rust-mode rustic
 	visual-fill-column vterm)))
 (custom-set-faces

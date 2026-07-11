@@ -11,3 +11,7 @@
 /tree-sitter/
 /var/
 /workspace
+
+# Files
+session.*
+tramp

@@ -13,7 +13,7 @@
 (scroll-bar-mode 0)
 (menu-bar-mode 0)
 
-(setq display-line-numbers-type 'relative)
+(setq display-line-numbers-type 'visual)
 (global-display-line-numbers-mode 1)
 
 (setq column-number-mode t)
@@ -67,3 +67,6 @@
 (global-set-key (kbd "C-c h") 'convert-num)
 
 (global-set-key (kbd "C-x C-b") 'buffer-menu-other-window)
+
+;; Set frame fullscreen
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
