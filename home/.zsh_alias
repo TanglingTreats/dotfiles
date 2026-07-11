@@ -43,6 +43,7 @@ alias weather="curl wttr.in/~singapore"
 
 alias spring-run="mvn spring-boot:run"
 
+alias mt5="WINEPREFIX=~/.mt5 wine \"./.mt5/drive_c/Program Files/MetaTrader 5/terminal64.exe\""
 
 alias start_win="qemu-system-x86_64 -drive file=$HOME/DImages/win10.img,if=ide \
   -smp 10 \
