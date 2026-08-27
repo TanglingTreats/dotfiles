@@ -70,3 +70,8 @@
 
 ;; Set frame fullscreen
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+;; Set case-insensitive
+(setq read-file-name-completion-ignore-case t)
+
+(setq read-buffer-completion-ignore-case t)
