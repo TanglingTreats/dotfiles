@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (setq custom-file (expand-file-name "~/.config/emacs/custom.el" user-emacs-directory))
 (when (file-exists-p custom-file)
   (load custom-file))
@@ -66,7 +67,11 @@
 
 (global-set-key (kbd "C-c h") 'convert-num)
 
+;; Open buffer menu in other window
 (global-set-key (kbd "C-x C-b") 'buffer-menu-other-window)
+
+;; Select help window after opening
+(setq help-window-select t)
 
 ;; Set frame fullscreen
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
