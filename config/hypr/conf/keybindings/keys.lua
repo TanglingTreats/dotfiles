@@ -43,10 +43,11 @@ hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/toggle-anima
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/screenshot.sh"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/screenshot.sh"))
 hl.bind(mainMod .. " + CTRL + Q", hl.dsp.exec_cmd("~/.config/ml4w/scripts/wlogout.sh"))
--- hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("waypaper --random"))
--- hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("waypaper"))
 hl.bind(mainMod .. " + ALT + W", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/wallpaper-automation.sh"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
+hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
+-- hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("waypaper --random"))
+-- hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("waypaper"))
 -- hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -replace -i"))
 -- hl.bind(mainMod .. " + CTRL + K", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/keybindings.sh"))
 -- hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("~/.config/waybar/launch.sh"))
@@ -57,7 +58,6 @@ hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 --bind = $mainMod CTRL, S, exec, ~/.config/ml4w/apps/ML4W_Dotfiles_Settings-x86_64.AppImage # Open ML4W Dotfiles Settings app
 -- hl.bind(mainMod .. " + SHIFT + H", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/hyprshade.sh"))
 -- hl.bind(mainMod .. " + ALT + G", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/gamemode.sh"))
-hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
 -- hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("missioncenter"))
 
 -- Workspaces
