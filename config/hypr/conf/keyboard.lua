@@ -19,7 +19,7 @@ hl.config({
         kb_layout = "us,us",
         kb_variant = ",dvorak",
         kb_model = "",
-        kb_options = "grp:alt_space_toggle",
+        kb_options = "grp:alt_space_toggle,ctrl:swapcaps",
         numlock_by_default = true,
         mouse_refocus = false,
         natural_scroll = false,
