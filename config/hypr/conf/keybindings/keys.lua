@@ -8,14 +8,14 @@
 
 local mainMod = "SUPER"
 local HYPRSCRIPTS = "~/.config/hypr/scripts"
-local SCRIPTS = "~/.config/ml4w/scripts"
+-- local SCRIPTS = "~/.config/ml4w/scripts"
 local ipc = "noctalia msg "
 
 -- Applications
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("~/.config/desktop-config/settings/terminal.sh"))
 hl.bind("ALT + TAB", hl.dsp.exec_cmd(ipc .. "window-switcher hold"))
--- hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("~/.config/desktop-config/settings/browser.sh"))
--- hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("~/.config/desktop-config/settings/filemanager.sh"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("helium"))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("dolphin"))
 -- hl.bind(mainMod .. " + CTRL + E", hl.dsp.exec_cmd("~/.config/desktop-config/settings/emojipicker.sh"))
 -- hl.bind(mainMod .. " + CTRL + C", hl.dsp.exec_cmd("~/.config/desktop-config/settings/calculator.sh"))
 
@@ -43,8 +43,8 @@ hl.bind(mainMod .. " + SHIFT + A", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/toggle-anima
 hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/screenshot.sh"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/screenshot.sh"))
 hl.bind(mainMod .. " + CTRL + Q", hl.dsp.exec_cmd("~/.config/ml4w/scripts/wlogout.sh"))
-hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("waypaper --random"))
-hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("waypaper"))
+-- hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("waypaper --random"))
+-- hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("waypaper"))
 hl.bind(mainMod .. " + ALT + W", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/wallpaper-automation.sh"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 -- hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -replace -i"))
@@ -109,23 +109,24 @@ hl.bind(mainMod .. " + CTRL + down", hl.dsp.focus({ workspace = "empty" }))
 
 -- Fn keys
 hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"))
--- hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -q s +10%"))
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"))
---hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -q s 10%-"))
--- hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ +5%"))
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"))
--- hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ -5%"))
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume-down"))
 hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"))
--- hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"))
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl pause"))
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"))
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"))
 hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("pactl set-source-mute @DEFAULT_SOURCE@ toggle"))
 hl.bind("XF86Calculator", hl.dsp.exec_cmd("~/.config/desktop-config/settings/calculator.sh"))
--- hl.bind("XF86Lock", hl.dsp.exec_cmd("hyprlock"))
 hl.bind("XF86Tools", hl.dsp.exec_cmd("$(cat ~/.config/desktop-config/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/apps/ML4W_Dotfiles_Settings-x86_64.AppImage"))
+--
+-- hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -q s +10%"))
+-- hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -q s 10%-"))
+-- hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ +5%"))
+-- hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ -5%"))
+-- hl.bind("XF86AudioMute", hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"))
+-- hl.bind("XF86Lock", hl.dsp.exec_cmd("hyprlock"))
 
 hl.bind("code:238", hl.dsp.exec_cmd("brightnessctl -d smc::kbd_backlight s +10"))
 hl.bind("code:237", hl.dsp.exec_cmd("brightnessctl -d smc::kbd_backlight s 10-"))

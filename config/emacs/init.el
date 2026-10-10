@@ -29,8 +29,18 @@
 ;; Org Mode
 ;;(setq org-startup-indented t)
 
+;; ====== LSP configuration ======
 ;; Java configuration
 (use-package lsp-java :config (add-hook 'java-mode-hook 'lsp))
+
+;; Cpp configuration
+(require 'eglot)
+(add-hook 'c-mode-hook 'eglot-ensure)
+(add-hook 'c++-mode-hook 'eglot-ensure)
+(add-hook 'c-or-c++-mode-hook 'eglot-ensure)
+
+;; .h files to open in c++-mode rather than c-mode.
+(add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
 
 ;; Golang Org-Babel mode
 (require 'ob-go)
@@ -43,6 +53,26 @@
 
 ;; Visual fill mode
 (global-visual-line-mode 1)
+
+;; Open buffer menu in other window
+(global-set-key (kbd "C-x C-b") 'buffer-menu-other-window)
+
+;; Select help window after opening
+(setq help-window-select t)
+
+;; Set frame fullscreen
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+;; Set case-insensitive
+(setq read-file-name-completion-ignore-case t)
+
+(setq read-buffer-completion-ignore-case t)
+
+;; Set Google C++ style
+(require 'google-c-style)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+
 
 ;; Keybindings
 (use-package projectile
@@ -67,16 +97,9 @@
 
 (global-set-key (kbd "C-c h") 'convert-num)
 
-;; Open buffer menu in other window
-(global-set-key (kbd "C-x C-b") 'buffer-menu-other-window)
-
-;; Select help window after opening
-(setq help-window-select t)
-
-;; Set frame fullscreen
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
-
-;; Set case-insensitive
-(setq read-file-name-completion-ignore-case t)
-
-(setq read-buffer-completion-ignore-case t)
+;; Eglot Bindings
+(global-set-key (kbd "C-c l a") 'eglot-code-actions)
+(global-set-key (kbd "C-c l r") 'eglot-rename)
+(global-set-key (kbd "C-c l d") 'eglot-find-declaration)
+(global-set-key (kbd "C-c l i") 'eglot-find-implementations)
+(global-set-key (kbd "C-c l h") 'eldoc)

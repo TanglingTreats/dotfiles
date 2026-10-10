@@ -1,0 +1,9 @@
+[theme]
+mode = "dark"
+shell_mode = "follow"
+source = "wallpaper"
+
+[bar.default]
+position = "top"
+
+

@@ -80,9 +80,3 @@ require("conf.environment")
 -- Environment for xdg-desktop-portal-hyprland
 -- ----------------------------------------------------- 
 -- exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-
-hl.on("hyprland.start", function()
-    hl.exec_cmd("noctalia")
-    hl.exec_cmd("~/.config/hypr/scripts/audio-init.sh")
-end)
-

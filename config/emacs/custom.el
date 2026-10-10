@@ -7,9 +7,9 @@
  '(custom-enabled-themes '(misterioso))
  '(org-babel-load-languages '((emacs-lisp . t) (shell . t) (org . t)))
  '(package-selected-packages
-   '(## babel ccls company eglot-inactive-regions go-mode lsp-java magit
-	multiple-cursors ob-go projectile rust-mode rustic
-	visual-fill-column vterm)))
+   '(## babel ccls company eglot-inactive-regions go-mode google-c-style
+	lsp-java magit multiple-cursors ob-go projectile rust-mode
+	rustic visual-fill-column vterm)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

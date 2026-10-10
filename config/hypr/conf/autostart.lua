@@ -32,15 +32,17 @@
 -- Dock
 
 hl.on("hyprland.start", function()
+    hl.exec_cmd("noctalia")
+    hl.exec_cmd("~/.config/hypr/scripts/audio-init.sh")
+    hl.exec_cmd("~/.config/desktop-config/settings/notification.sh")
     hl.exec_cmd("~/.config/hypr/scripts/xdg.sh")
+    hl.exec_cmd("~/.config/hypr/scripts/gtk.sh")
     hl.exec_cmd("~/.config/hypr/scripts/wallpaper-restore.sh")
     hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
-    hl.exec_cmd("~/.config/desktop-config/settings/notification.sh")
-    hl.exec_cmd("~/.config/hypr/scripts/gtk.sh")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("wl-paste --watch cliphist store")
-    hl.exec_cmd("~/.config/ml4w/scripts/ags.sh")
+    -- hl.exec_cmd("~/.config/ml4w/scripts/ags.sh")
     hl.exec_cmd("~/.config/hypr/scripts/cleanup.sh")
-    hl.exec_cmd("~/.config/nwg-dock-hyprland/launch.sh")
+    -- hl.exec_cmd("~/.config/nwg-dock-hyprland/launch.sh")
 end)
 
