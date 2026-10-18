@@ -45,6 +45,8 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/screenshot.s
 hl.bind(mainMod .. " + ALT + W", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/wallpaper-automation.sh"))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center notifications"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center calendar"))
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(ipc .. "session logout"))
 hl.bind(mainMod .. " + CTRL + Q", hl.dsp.exec_cmd(ipc .. "session shutdown"))
 -- hl.bind(mainMod .. " + CTRL + Q", hl.dsp.exec_cmd("~/.config/ml4w/scripts/wlogout.sh"))
