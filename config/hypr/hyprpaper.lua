@@ -3,3 +3,4 @@
 -- TODO: manual review — top-level key 'preload = $HOME/.config/ml4w/assets/blank.png' has no enclosing section
 -- TODO: manual review — top-level key 'wallpaper = ,$HOME/wallpaper/sousou-no-frieren.jpeg' has no enclosing section
 -- TODO: manual review — top-level key 'splash = false' has no enclosing section
+splash = false
