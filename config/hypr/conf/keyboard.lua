@@ -40,4 +40,9 @@ hl.config({
         sensitivity = 0, -- Pointer speed: -1.0 - 1.0, 0 means no modification.
     },
 })
+hl.device({
+  name = "tpps/2-elan-trackpoint",
+  sensitivity = -0.4,
+  scroll_factor = 0.4
+})
 
