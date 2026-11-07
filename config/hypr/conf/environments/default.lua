@@ -102,8 +102,8 @@ hl.window_rule({
 
 -- XDG Desktop Portal
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
-hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
 
 -- QT
 hl.env("QT_QPA_PLATFORM", "wayland;xcb")

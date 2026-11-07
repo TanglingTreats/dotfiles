@@ -8,16 +8,14 @@
 
 local mainMod = "SUPER"
 local HYPRSCRIPTS = "~/.config/hypr/scripts"
--- local SCRIPTS = "~/.config/ml4w/scripts"
 local ipc = "noctalia msg "
 
 -- Applications
 hl.bind(mainMod .. " + RETURN", hl.dsp.exec_cmd("~/.config/desktop-config/settings/terminal.sh"))
 hl.bind("ALT + TAB", hl.dsp.exec_cmd(ipc .. "window-switcher hold"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("helium"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("dolphin"))
--- hl.bind(mainMod .. " + CTRL + E", hl.dsp.exec_cmd("~/.config/desktop-config/settings/emojipicker.sh"))
--- hl.bind(mainMod .. " + CTRL + C", hl.dsp.exec_cmd("~/.config/desktop-config/settings/calculator.sh"))
+hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("helium"))
+hl.bind(mainMod .. " + SHIFT + E", hl.dsp.exec_cmd("emacs"))
+-- hl.bind(mainMod .. " + E", hl.dsp.exec_cmd("dolphin"))
 
 -- Windows
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
@@ -47,11 +45,9 @@ hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center notifications"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(ipc .. "panel-toggle control-center calendar"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(ipc .. "panel-toggle session"))
 hl.bind(mainMod .. " + SHIFT + Q", hl.dsp.exec_cmd(ipc .. "session logout"))
 hl.bind(mainMod .. " + CTRL + Q", hl.dsp.exec_cmd(ipc .. "session shutdown"))
--- hl.bind(mainMod .. " + CTRL + Q", hl.dsp.exec_cmd("~/.config/ml4w/scripts/wlogout.sh"))
--- hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("waypaper --random"))
--- hl.bind(mainMod .. " + CTRL + W", hl.dsp.exec_cmd("waypaper"))
 -- hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("pkill rofi || rofi -show drun -replace -i"))
 -- hl.bind(mainMod .. " + CTRL + K", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/keybindings.sh"))
 -- hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd("~/.config/waybar/launch.sh"))
@@ -59,7 +55,6 @@ hl.bind(mainMod .. " + CTRL + Q", hl.dsp.exec_cmd(ipc .. "session shutdown"))
 -- hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/loadconfig.sh"))
 -- hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(SCRIPTS .. "/cliphist.sh"))
 -- hl.bind(mainMod .. " + CTRL + T", hl.dsp.exec_cmd("~/.config/waybar/themeswitcher.sh"))
---bind = $mainMod CTRL, S, exec, ~/.config/ml4w/apps/ML4W_Dotfiles_Settings-x86_64.AppImage # Open ML4W Dotfiles Settings app
 -- hl.bind(mainMod .. " + SHIFT + H", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/hyprshade.sh"))
 -- hl.bind(mainMod .. " + ALT + G", hl.dsp.exec_cmd(HYPRSCRIPTS .. "/gamemode.sh"))
 -- hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("missioncenter"))

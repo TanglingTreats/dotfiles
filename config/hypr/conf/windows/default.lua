@@ -19,9 +19,6 @@ end
 local palette = json.decode(paletteFile:read("*all"))
 
 
-
-
-
 hl.config({
     general = {
         gaps_in = 10,
@@ -31,8 +28,15 @@ hl.config({
             active_border = "rgb(" .. string.sub(palette.dark.mPrimary, 2) .. ")",
             inactive_border = "rgb(" .. string.sub(palette.dark.mOutline, 2) .. ")",
         },
-        layout = "dwindle",
+        layout = "master",
         resize_on_border = true,
     },
+    decoration = {
+	blur = {
+	    variant = "frost",
+	    brightness = 0.8,
+	}
+	
+    }
 })
 
